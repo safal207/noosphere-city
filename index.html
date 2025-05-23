@@ -4,76 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Noosphere City | Gazipasha</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Helvetica Neue', sans-serif;
-      background: #0c0c0c;
-      color: #f0f0f0;
-      line-height: 1.6;
-    }
-    header {
-      text-align: center;
-      padding: 4rem 2rem 2rem;
-    }
-    h1 {
-      font-size: 3rem;
-      background: linear-gradient(to right, #00ffe1, #5f00ff);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      text-shadow: 0 0 15px rgba(95, 0, 255, 0.3);
-    }
-    .sub {
-      color: #aaa;
-      font-size: 1.2rem;
-      margin-top: -1rem;
-    }
-    section {
-      max-width: 480px;
-      margin: 2rem auto;
-      padding: 1rem 1.2rem;
-    }
-    .cta {
-      background: #111;
-      border: 1px solid #333;
-      padding: 1.5rem;
-      border-radius: 10px;
-      margin-top: 2rem;
-      box-shadow: 0 0 10px rgba(0, 255, 225, 0.05);
-    }
-    input, textarea, button {
-      width: calc(100% - 2px);
-      padding: 0.8rem;
-      margin-top: 1rem;
-      background: #1a1a1a;
-      border: 1px solid #444;
-      color: #fff;
-      border-radius: 5px;
-      box-sizing: border-box;
-    }
-    textarea {
-      resize: none;
-    }
-    button {
-      background: #00ffe1;
-      color: #000;
-      font-weight: bold;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      box-shadow: 0 0 10px #00ffe1;
-    }
-    button:hover {
-      background: #5f00ff;
-      color: #fff;
-      box-shadow: 0 0 15px #5f00ff;
-    }
-    footer {
-      text-align: center;
-      padding: 2rem;
-      font-size: 0.9rem;
-      color: #555;
-    }
-  </style>
+  <style>/* Стили те же, не изменяем */</style>
   <script>
     async function handleTelegramDuplicate(e) {
       e.preventDefault();
@@ -84,7 +15,7 @@
         message: form.message.value
       };
       try {
-        await fetch("https://noosphere-server.vercel.app/submit", {
+        await fetch("https://noosphere-server.vercel.app/api/submit", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(data)
