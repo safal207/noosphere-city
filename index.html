@@ -6,28 +6,31 @@
   <title>Noosphere City | Gazipasha</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       margin: 0;
-      padding: 2rem;
-      background-color: #f7f7f7;
+      padding: 0;
+      background: linear-gradient(to bottom, #e9f0f4, #ffffff);
     }
     header {
-      background-color: #111;
+      background-color: #0c2c4c;
       color: #fff;
-      padding: 1rem;
+      padding: 2rem 1rem;
       text-align: center;
     }
     .sub {
-      font-size: 1.1rem;
-      color: #ccc;
+      font-size: 1.2rem;
+      color: #d1e4f3;
     }
     section {
       max-width: 800px;
       margin: 2rem auto;
       padding: 2rem;
-      background-color: #fff;
-      border-radius: 8px;
-      box-shadow: 0 0 8px rgba(0,0,0,0.1);
+      background-color: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+    }
+    h1, h3 {
+      margin: 0 0 1rem;
     }
     form {
       display: flex;
@@ -36,34 +39,43 @@
       margin-top: 1rem;
     }
     input, textarea {
-      padding: 0.5rem;
+      padding: 0.75rem;
       font-size: 1rem;
-      border-radius: 4px;
+      border-radius: 6px;
       border: 1px solid #ccc;
       width: 100%;
       box-sizing: border-box;
+      transition: border-color 0.3s ease;
+    }
+    input:focus, textarea:focus {
+      outline: none;
+      border-color: #007b8a;
     }
     button {
-      padding: 0.75rem;
-      background-color: teal;
+      padding: 0.85rem;
+      background: linear-gradient(to right, #007b8a, #00b4a0);
       color: white;
       font-size: 1rem;
+      font-weight: bold;
       border: none;
-      border-radius: 4px;
+      border-radius: 6px;
       cursor: pointer;
       width: 100%;
+      transition: background 0.3s ease;
+    }
+    button:hover {
+      background: linear-gradient(to right, #00b4a0, #007b8a);
     }
     footer {
       text-align: center;
       padding: 1rem;
-      color: #777;
+      color: #555;
       font-size: 0.9rem;
+      background-color: #f3f3f3;
     }
     @media (max-width: 600px) {
-      body {
-        padding: 1rem;
-      }
       section {
+        margin: 1rem;
         padding: 1rem;
       }
     }
