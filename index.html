@@ -74,6 +74,27 @@
       color: #555;
     }
   </style>
+  <script>
+    async function handleTelegramDuplicate(e) {
+      e.preventDefault();
+      const form = e.target;
+      const data = {
+        name: form.name.value,
+        contact: form.contact.value,
+        message: form.message.value
+      };
+      try {
+        await fetch("https://noosphere-server.vercel.app/submit", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(data)
+        });
+      } catch (error) {
+        console.error("Ошибка Telegram:", error);
+      }
+      form.submit();
+    }
+  </script>
 </head>
 <body>
   <header>
@@ -92,7 +113,7 @@
 
     <div class="cta">
       <h3>Хочешь быть частью?</h3>
-      <form action="https://formspree.io/f/movdzble" method="POST">
+      <form action="https://formspree.io/f/movdzble" method="POST" onsubmit="handleTelegramDuplicate(event)">
         <label for="name">Имя или псевдоним:</label>
         <input type="text" id="name" name="name" required>
 
