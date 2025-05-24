@@ -54,6 +54,9 @@
       outline: none;
       border-color: #0ff;
     }
+    .honeypot {
+      display: none;
+    }
     button {
       padding: 0.85rem;
       background: linear-gradient(to right, #00c6ff, #0072ff);
@@ -96,6 +99,11 @@
     async function handleTelegramDuplicate(e) {
       e.preventDefault();
       const form = e.target;
+      const honeypot = form.honeypot.value;
+      if (honeypot) {
+        console.warn("Honeypot triggered");
+        return;
+      }
       const data = {
         name: form.name.value,
         contact: form.contact.value,
@@ -147,6 +155,11 @@
 
         <label for="msg">Почему тебя это откликает?</label>
         <textarea id="msg" name="message" rows="4"></textarea>
+
+        <div class="honeypot">
+          <label for="honeypot">Оставьте это поле пустым:</label>
+          <input type="text" id="honeypot" name="honeypot">
+        </div>
 
         <button type="submit">Отправить сигнал</button>
         <div id="successMessage" class="success-message">✅ Сообщение отправлено!</div>
