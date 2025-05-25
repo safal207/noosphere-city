@@ -81,6 +81,15 @@
       display: none;
       text-align: center;
     }
+    .loading-message {
+      margin-top: 1rem;
+      padding: 1rem;
+      background: #222;
+      color: #ccc;
+      border-radius: 6px;
+      display: none;
+      text-align: center;
+    }
     footer {
       text-align: center;
       padding: 1rem;
@@ -104,6 +113,10 @@
         console.warn("Honeypot triggered");
         return;
       }
+      const loading = document.getElementById("loadingMessage");
+      const success = document.getElementById("successMessage");
+      loading.style.display = "block";
+      success.style.display = "none";
       const data = {
         name: form.name.value,
         contact: form.contact.value,
@@ -120,9 +133,11 @@
           throw new Error("Telegram fetch failed");
         }
 
-        document.getElementById("successMessage").style.display = "block";
+        loading.style.display = "none";
+        success.style.display = "block";
         form.reset();
       } catch (error) {
+        loading.style.display = "none";
         console.error("Ошибка Telegram:", error);
         alert("Не удалось отправить сообщение в Telegram.");
       }
@@ -162,6 +177,7 @@
         </div>
 
         <button type="submit">Отправить сигнал</button>
+        <div id="loadingMessage" class="loading-message">⏳ Отправка...</div>
         <div id="successMessage" class="success-message">✅ Сообщение отправлено!</div>
       </form>
     </div>
