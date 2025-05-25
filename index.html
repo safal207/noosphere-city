@@ -120,6 +120,7 @@
   </style>
   <script>
     async function handleTelegramDuplicate(e) {
+      if (navigator.vibrate) navigator.vibrate(100);
       e.preventDefault();
       const form = e.target;
       const honeypot = form.honeypot.value;
