@@ -158,6 +158,7 @@
           success.style.display = "none";
         }, 4000);
       } catch (error) {
+        if (navigator.vibrate) navigator.vibrate([200, 100, 200]);
         loading.style.display = "none";
         console.error("Ошибка Telegram:", error);
         alert("Не удалось отправить сообщение в Telegram.");
@@ -167,8 +168,8 @@
 </head>
 <body>
   <header>
-    <h1>Noosphere City</h1>
-    <div class="sub">Город будущего для тех, кто строит без разрешения</div>
+    <h1>🏙️ Добро пожаловать в Noosphere City</h1>
+    <div class="sub">Создай свою жизнь в тишине, среди природы и единомышленников — пока мир шумит</div>
   </header>
   <section>
     <p>
@@ -181,7 +182,7 @@
     </p>
 
     <div class="cta">
-      <h3>Хочешь быть частью?</h3>
+      <h3>🚀 Присоединяйся к первому неосферному городу. Заполни форму — и стань частью ядра.</h3>
       <form method="POST" onsubmit="handleTelegramDuplicate(event)">
         <label for="name">Имя или псевдоним:</label>
         <input type="text" id="name" name="name" required>
