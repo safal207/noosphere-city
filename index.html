@@ -73,6 +73,7 @@
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
     button:hover {
+      if (navigator.vibrate) navigator.vibrate(20);
       transform: scale(1.05);
       box-shadow: 0 0 20px #00ffcc, 0 0 40px #0077ff;
     }
