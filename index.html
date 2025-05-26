@@ -126,6 +126,7 @@
       const form = e.target;
       const honeypot = form.honeypot.value;
       if (honeypot) {
+        if (navigator.vibrate) navigator.vibrate([150, 50, 150]);
         console.warn("Honeypot triggered");
         return;
       }
