@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Noosphere City</title>
   <style>
     body {
@@ -18,26 +18,46 @@
     section {
       margin-bottom: 3rem;
     }
-    .form {
+    .form, .form-wrapper {
       background: #1c1c1c;
       padding: 1rem;
       border-radius: 8px;
+      max-width: 600px;
+      margin: 0 auto;
     }
     .form input, .form textarea {
       width: 100%;
       margin-bottom: 1rem;
-      padding: 0.5rem;
-      border-radius: 5px;
+      padding: 0.75rem;
+      border-radius: 6px;
       border: none;
+      background: #333;
+      color: #fff;
     }
     .form button {
-      padding: 0.75rem 1.5rem;
+      padding: 1rem;
+      width: 100%;
       background-color: #00ffee;
       color: #000;
       font-weight: bold;
+      font-size: 1.1rem;
       border: none;
-      border-radius: 5px;
+      border-radius: 6px;
+      box-shadow: 0 0 12px #00ffeeaa;
       cursor: pointer;
+    }
+    .form button:hover {
+      background: #00ccdd;
+    }
+    .form h3 {
+      text-align: center;
+      color: #00ffee;
+    }
+    .success {
+      text-align: center;
+      font-weight: bold;
+      margin-top: 1rem;
+      color: #00ffcc;
     }
     blockquote {
       border-left: 4px solid #00ffee;
@@ -49,6 +69,7 @@
   </style>
 </head>
 <body>
+
   <h1>Noosphere City</h1>
 
   <section>
@@ -68,8 +89,8 @@
 
   <section class="form">
     <h3>Форма</h3>
-    <input type="text" placeholder="Имя">
-    <input type="text" placeholder="Контакт (Telegram или Email)">
+    <input type="text" placeholder="Имя" />
+    <input type="text" placeholder="Контакт (Telegram или Email)" />
     <textarea rows="4" placeholder="Почему откликается?"></textarea>
     <button>Хочу в ядро</button>
     <p style="color:#888; font-size:0.9rem;">Мы не спамим. Всё по любви.</p>
@@ -102,43 +123,37 @@
     <p><strong>Ты не просто выбираешь проект. Ты выбираешь себя. И ты нужен.</strong></p>
   </section>
 
-<section class="form" style="max-width:600px; margin: 0 auto; background:#1a1a1a; padding:1.5rem; border-radius:12px; box-shadow:0 0 20px #00ffee66;">
-  <h3 style="text-align:center; color:#00ffee;">Хочешь в Ядро? Отправь сигнал ❤️</h3>
-  <form id="signalForm">
-    <input type="text" id="name" name="name" placeholder="Имя или псевдоним" required
-      style="width:100%;padding:0.75rem;margin-bottom:1rem;border-radius:6px;border:none;background:#333;color:#fff;">
-    <input type="text" id="contact" name="contact" placeholder="Контакт (Telegram, e-mail)" required
-      style="width:100%;padding:0.75rem;margin-bottom:1rem;border-radius:6px;border:none;background:#333;color:#fff;">
-    <textarea id="message" name="message" rows="4" placeholder="Почему тебя это откликает?"
-      style="width:100%;padding:0.75rem;margin-bottom:1rem;border-radius:6px;border:none;background:#333;color:#fff;"></textarea>
-    <button type="submit"
-      style="width:100%;padding:1rem;background:#00ffee;color:#000;font-weight:bold;font-size:1.1rem;border:none;border-radius:6px;cursor:pointer;box-shadow:0 0 12px #00ffeeaa;">Отправить</button>
-    <div id="successMessage" style="display:none;text-align:center;font-weight:bold;margin-top:1rem;color:#00ffcc;">
-      ✅ Сигнал отправлен!
-    </div>
-  </form>
-</section>
+  <section class="form-wrapper">
+    <h3>Хочешь в Ядро? Отправь сигнал ❤️</h3>
+    <form id="signalForm">
+      <input type="text" id="name" name="name" placeholder="Имя или псевдоним" required />
+      <input type="text" id="contact" name="contact" placeholder="Контакт (Telegram, e-mail)" required />
+      <textarea id="message" name="message" rows="4" placeholder="Почему тебя это откликает?" required></textarea>
+      <button type="submit">Отправить</button>
+      <div id="successMessage" class="success" style="display:none;">✅ Сигнал отправлен!</div>
+    </form>
+  </section>
 
-<script>
-  document.getElementById('signalForm').addEventListener('submit', async function (e) {
-    e.preventDefault();
-    const name = document.getElementById('name').value;
-    const contact = document.getElementById('contact').value;
-    const message = document.getElementById('message').value;
+  <script>
+    document.getElementById('signalForm').addEventListener('submit', async function (e) {
+      e.preventDefault();
+      const name = document.getElementById('name').value;
+      const contact = document.getElementById('contact').value;
+      const message = document.getElementById('message').value;
 
-    const text = `🔥 Новый отклик из Noosphere City:%0A%0A👤 Имя: ${name}%0A✉️ Контакт: ${contact}%0A💬 Сообщение: ${message}`;
-    const token = '8197581773:AAFTpr4DiNbv4fjAnwfTrGagVJYjzIU_tVk';
-    const chatId = '-1002608013735';
+      const text = `🔥 Новый отклик из Noosphere City:%0A%0A👤 Имя: ${name}%0A✉️ Контакт: ${contact}%0A💬 Сообщение: ${message}`;
+      const token = '8197581773:AAFTpr4DiNbv4fjAnwfTrGagVJYjzIU_tVk;
+      const chatId = '-1002608013735';
 
-    try {
-      await fetch(`https://api.telegram.org/bot${token}/sendMessage?chat_id=${chatId}&text=${text}`);
-      document.getElementById('successMessage').style.display = 'block';
-      this.reset();
-    } catch (err) {
-      alert('❌ Ошибка при отправке сигнала. Попробуй позже.');
-    }
-  });
-</script>
+      try {
+        await fetch(`https://api.telegram.org/bot${token}/sendMessage?chat_id=${chatId}&text=${text}`);
+        document.getElementById('successMessage').style.display = 'block';
+        this.reset();
+      } catch (err) {
+        alert('❌ Ошибка при отправке сигнала. Попробуй позже.');
+      }
+    });
+  </script>
 
 </body>
 </html>
