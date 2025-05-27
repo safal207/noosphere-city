@@ -1,177 +1,197 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru" data-theme="dark" style="transition: background 0.6s ease, color 0.6s ease;">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>Noosphere City</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Noosphere City | Gazipasha</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background: #0f0f0f;
-      color: #f0f0f0;
-      padding: 2rem;
-      line-height: 1.6;
-    }
-    h1, h2, h3 {
-      color: #00ffee;
-    }
-    section {
-      margin-bottom: 3rem;
-    }
-
-    
-    .form, .form-wrapper {
-      background: #1c1c1c;
+      font-family: 'Orbitron', sans-serif;
+      margin: 0;
       padding: 1rem;
-      border-radius: 8px;
-      max-width: 600px;
-      margin: 0 auto;
-    }
-    .form input, .form textarea {
-      width: 100%;
-      margin-bottom: 1rem;
-      padding: 0.75rem;
-      border-radius: 6px;
-      border: none;
-      background: #333;
+      background: #0f0f0f;
       color: #fff;
     }
-    .form button {
-      padding: 1rem;
-      width: 100%;
-      background-color: #00ffee;
+    header {
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+    .sub {
+      font-size: 1.2rem;
+      margin-top: 0.5rem;
+    }
+    .sticky-cta {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      padding: 0.75rem 1.25rem;
+      background: #00ffee;
       color: #000;
       font-weight: bold;
-      font-size: 1.1rem;
-      border: none;
-      border-radius: 6px;
-      box-shadow: 0 0 12px #00ffeeaa;
-      cursor: pointer;
-    }
-    .form button:hover {
-      background: #00ccdd;
-    }
-    .form h3 {
-      text-align: center;
-      color: #00ffee;
-    }
-    .success {
-      text-align: center;
-      font-weight: bold;
-      margin-top: 1rem;
-      color: #00ffcc;
-    }
-    blockquote {
-      border-left: 4px solid #00ffee;
-      padding-left: 1rem;
-      color: #ccc;
-      margin: 1rem 0;
-      font-style: italic;
-    }
-        .form {
-      max-width: 100%;
-      box-sizing: border-box;
-      padding: 1rem;
-      background: #1c1c1c;
       border-radius: 8px;
-      margin: 0 auto;
+      box-shadow: 0 0 12px #00ffee;
+      text-decoration: none;
+      opacity: 0;
+      transform: translateY(10px);
+      transition: all 0.5s ease;
+      z-index: 9999;
+      font-size: 0.9rem;
+      max-width: 250px;
+      text-align: center;
     }
-
-    .form input,
-    .form textarea,
-    .form button {
+    .sticky-cta.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .countdown-banner {
+      margin-top: 2rem;
+      text-align: center;
+      font-size: 1.2rem;
+      background: #111;
+      padding: 1rem;
+      border-radius: 8px;
+      box-shadow: 0 0 10px #0ff;
+    }
+    .countdown-banner span {
+      font-weight: bold;
+    }
+    #heart {
+      display: inline-block;
+      animation: beat 1s infinite;
+    }
+    @keyframes beat {
+      0%, 100% { transform: scale(1); color: #f00; }
+      50% { transform: scale(1.3); color: #ff69b4; }
+    }
+    .form-section {
+      margin-top: 3rem;
+      background: #1c1c1c;
+      padding: 2rem;
+      border-radius: 8px;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    form label {
+      display: block;
+      margin-bottom: 0.25rem;
+      font-weight: bold;
+    }
+    form input, form textarea {
       width: 100%;
-      box-sizing: border-box;
+      padding: 0.5rem;
+      margin-bottom: 1rem;
+      border-radius: 4px;
+      border: none;
+    }
+    form button {
+      background: #00ffee;
+      color: #000;
+      padding: 0.75rem 1.5rem;
+      font-weight: bold;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 1rem;
+      box-shadow: 0 0 8px #0ff;
+    }
+    form button:hover {
+      background: #00ccdd;
     }
   </style>
 </head>
 <body>
-
-  <h1>Noosphere City</h1>
-
-  <section>
-    <h2>Ты устал от шума</h2>
-    <p>Но ты не сломлен. Ты всё ещё веришь, что можно жить иначе — в тишине, с поддержкой, смыслом и настоящими людьми.</p>
-    <p><strong>Noosphere City</strong> — это пространство для таких, как ты.</p>
-  </section>
+  <header>
+    <h1>🏙️ Добро пожаловать в <span style="color: #00ffee;">Noosphere City</span></h1>
+    <div class="sub">Создай свою жизнь в тишине, среди природы и единомышленников — пока мир шумит</div>
+  </header>
 
   <section>
-    <h2>Оставь заявку — и получи:</h2>
-    <ul>
-      <li>Приглашение в закрытую волну Noosphere City</li>
-      <li>PDF-гайд: “7 принципов новой жизни в эпоху перемен”</li>
-      <li>Доступ к команде, которая уже действует</li>
-    </ul>
+    <div class="countdown-banner">
+      <div>🔥 <span>Осталось <span id="spots-left">13</span> мест в первой волне резидентов!</span></div>
+      <div>Успей до закрытия набора через: <span id="countdown"></span><span id="heart">❤️</span></div>
+    </div>
   </section>
 
-  <section class="form">
-    <h3>Форма</h3>
-    <input type="text" placeholder="Имя" />
-    <input type="text" placeholder="Контакт (Telegram или Email)" />
-    <textarea rows="4" placeholder="Почему откликается?"></textarea>
-    <button>Хочу в ядро</button>
-    <p style="color:#888; font-size:0.9rem;">Мы не спамим. Всё по любви.</p>
-  </section>
-
-  <section>
-    <h2>Ты не один</h2>
-    <ul>
-      <li>Ты ищешь безопасное и вдохновляющее пространство</li>
-      <li>Хочешь, чтобы дети росли в любви, а не тревоге</li>
-      <li>Мечтаешь творить, не выгорая</li>
-      <li>Знаешь, что можешь быть сильным, но хочешь опоры</li>
-    </ul>
-  </section>
-
-  <section>
-    <h2>Совет Ядра</h2>
-    <blockquote>Сократ: "Познай себя — и ты создашь город, в котором не придётся прятаться."</blockquote>
-    <blockquote>Серафим Саровский: "Стяжи дух мирен — и тысячи спасутся вокруг тебя."</blockquote>
-    <blockquote>Дэн: "Ты ищешь совершенство снаружи, но оно уже внутри тебя."</blockquote>
-    <blockquote>Джойс Милмен: "Создайте место, где женщины, дети и семьи могут быть настоящими."</blockquote>
-    <blockquote>Серафим (Путь мирного воина): "Ты строишь себя, не город."</blockquote>
-    <blockquote>Пифия: "Ты уже знаешь, что делать. Я здесь, чтобы ты поверил."</blockquote>
-    <blockquote>Морфиус: "Я могу лишь показать дверь. Ты должен войти в неё сам."</blockquote>
-  </section>
-
-  <section>
-    <h2>P.S. — от сердца</h2>
-    <p>Ты читаешь это — значит, уже сделал шаг. Может, ум ещё сомневается. Но ты здесь.</p>
-    <p><strong>Ты не просто выбираешь проект. Ты выбираешь себя. И ты нужен.</strong></p>
-  </section>
-
-  <section class="form-wrapper">
-    <h3>Хочешь в Ядро? Отправь сигнал ❤️</h3>
+  <section id="form-start" class="form-section">
     <form id="signalForm">
-      <input type="text" id="name" name="name" placeholder="Имя или псевдоним" required />
-      <input type="text" id="contact" name="contact" placeholder="Контакт (Telegram, e-mail)" required />
-      <textarea id="message" name="message" rows="4" placeholder="Почему тебя это откликает?" required></textarea>
-      <button type="submit">Отправить</button>
-      <div id="successMessage" class="success" style="display:none;">✅ Сигнал отправлен!</div>
+      <label for="name">Имя или псевдоним:</label>
+      <input type="text" id="name" name="name" required />
+
+      <label for="contact">Контакт (Telegram, e-mail):</label>
+      <input type="text" id="contact" name="contact" required />
+
+      <label for="message">Почему тебя это откликает?</label>
+      <textarea id="message" name="message" rows="4"></textarea>
+
+      <button type="submit">Отправить сигнал</button>
     </form>
   </section>
 
+  <footer style="margin-top: 2rem; text-align: center; font-size: 0.9rem;">
+    <span style="color: #ccc;">Noosphere City — 2025 © Проект на стыке духа и технологии</span>
+  </footer>
+
+  <a href="#form-start" class="sticky-cta" id="stickyCta">⬇ Перейти к форме</a>
+
   <script>
-    document.getElementById('signalForm').addEventListener('submit', async function (e) {
+    // Таймер обратного отсчёта
+    const countdown = document.getElementById("countdown");
+    const targetDate = new Date(Date.now() + 86400000); // +24 часа
+    function updateCountdown() {
+      const now = new Date();
+      const diff = targetDate - now;
+      const hours = String(Math.floor(diff / 1000 / 60 / 60)).padStart(2, '0');
+      const minutes = String(Math.floor(diff / 1000 / 60) % 60).padStart(2, '0');
+      const seconds = String(Math.floor(diff / 1000) % 60).padStart(2, '0');
+      countdown.textContent = `${hours}:${minutes}:${seconds}`;
+    }
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
+
+    // Плавающая кнопка
+    document.addEventListener("DOMContentLoaded", () => {
+      const cta = document.getElementById("stickyCta");
+      const formSection = document.getElementById("form-start");
+      const observer = new IntersectionObserver(([entry]) => {
+        if (!entry.isIntersecting) {
+          cta.classList.add("show");
+        } else {
+          cta.classList.remove("show");
+        }
+      }, {
+        threshold: 0.1
+      });
+      if (formSection) observer.observe(formSection);
+    });
+
+    // Обработка формы с Telegram
+    document.getElementById("signalForm").addEventListener("submit", async function(e) {
       e.preventDefault();
-      const name = document.getElementById('name').value;
-      const contact = document.getElementById('contact').value;
-      const message = document.getElementById('message').value;
-
-      const text = `🔥 Новый отклик из Noosphere City:%0A%0A👤 Имя: ${name}%0A✉️ Контакт: ${contact}%0A💬 Сообщение: ${message}`;
-      const token = '8197581773:AAFTpr4DiNbv4fjAnwfTrGagVJYjzIU_tVk';
-      const chatId = '-1002608013735';
-
+      const name = document.getElementById("name").value;
+      const contact = document.getElementById("contact").value;
+      const message = document.getElementById("message").value;
+      const text = `🔥 Новый сигнал с сайта Noosphere City:\n\n👤 Имя: ${name}\n✉️ Контакт: ${contact}\n💬 Сообщение: ${message}`;
+      const payload = {
+        name,
+        contact,
+        message
+      };
       try {
-        await fetch(`https://api.telegram.org/bot${token}/sendMessage?chat_id=${chatId}&text=${text}`);
-        document.getElementById('successMessage').style.display = 'block';
+        await fetch("https://noosphere-server.vercel.app/api/submit", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload)
+        });
+        alert("✅ Сигнал успешно отправлен!");
         this.reset();
-      } catch (err) {
-        alert('❌ Ошибка при отправке сигнала. Попробуй позже.');
+      } catch (error) {
+        alert("❌ Ошибка отправки. Попробуй позже.");
       }
     });
   </script>
-
 </body>
 </html>
