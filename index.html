@@ -101,5 +101,44 @@
     <p>Ты читаешь это — значит, уже сделал шаг. Может, ум ещё сомневается. Но ты здесь.</p>
     <p><strong>Ты не просто выбираешь проект. Ты выбираешь себя. И ты нужен.</strong></p>
   </section>
+
+<section class="form" style="max-width:600px; margin: 0 auto; background:#1a1a1a; padding:1.5rem; border-radius:12px; box-shadow:0 0 20px #00ffee66;">
+  <h3 style="text-align:center; color:#00ffee;">Хочешь в Ядро? Отправь сигнал ❤️</h3>
+  <form id="signalForm">
+    <input type="text" id="name" name="name" placeholder="Имя или псевдоним" required
+      style="width:100%;padding:0.75rem;margin-bottom:1rem;border-radius:6px;border:none;background:#333;color:#fff;">
+    <input type="text" id="contact" name="contact" placeholder="Контакт (Telegram, e-mail)" required
+      style="width:100%;padding:0.75rem;margin-bottom:1rem;border-radius:6px;border:none;background:#333;color:#fff;">
+    <textarea id="message" name="message" rows="4" placeholder="Почему тебя это откликает?"
+      style="width:100%;padding:0.75rem;margin-bottom:1rem;border-radius:6px;border:none;background:#333;color:#fff;"></textarea>
+    <button type="submit"
+      style="width:100%;padding:1rem;background:#00ffee;color:#000;font-weight:bold;font-size:1.1rem;border:none;border-radius:6px;cursor:pointer;box-shadow:0 0 12px #00ffeeaa;">Отправить</button>
+    <div id="successMessage" style="display:none;text-align:center;font-weight:bold;margin-top:1rem;color:#00ffcc;">
+      ✅ Сигнал отправлен!
+    </div>
+  </form>
+</section>
+
+<script>
+  document.getElementById('signalForm').addEventListener('submit', async function (e) {
+    e.preventDefault();
+    const name = document.getElementById('name').value;
+    const contact = document.getElementById('contact').value;
+    const message = document.getElementById('message').value;
+
+    const text = `🔥 Новый отклик из Noosphere City:%0A%0A👤 Имя: ${name}%0A✉️ Контакт: ${contact}%0A💬 Сообщение: ${message}`;
+    const token = '8197581773:AAFTpr4DiNbv4fjAnwfTrGagVJYjzIU_tVk';
+    const chatId = '-1002608013735';
+
+    try {
+      await fetch(`https://api.telegram.org/bot${token}/sendMessage?chat_id=${chatId}&text=${text}`);
+      document.getElementById('successMessage').style.display = 'block';
+      this.reset();
+    } catch (err) {
+      alert('❌ Ошибка при отправке сигнала. Попробуй позже.');
+    }
+  });
+</script>
+
 </body>
 </html>
