@@ -169,29 +169,45 @@
     });
 
     // Обработка формы с Telegram
-    document.getElementById("signalForm").addEventListener("submit", async function(e) {
-      e.preventDefault();
-      const name = document.getElementById("name").value;
-      const contact = document.getElementById("contact").value;
-      const message = document.getElementById("message").value;
-      const text = `🔥 Новый сигнал с сайта Noosphere City:\n\n👤 Имя: ${name}\n✉️ Контакт: ${contact}\n💬 Сообщение: ${message}`;
-      const payload = {
-        name,
-        contact,
-        message
-      };
-      try {
-        await fetch("https://noosphere-server.vercel.app/api/submit", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(payload)
-        });
-        alert("✅ Сигнал успешно отправлен!");
-        this.reset();
-      } catch (error) {
-        alert("❌ Ошибка отправки. Попробуй позже.");
-      }
-    });
+   document.getElementById('signalForm').addEventListener('submit', async function (e) {
+    e.preventDefault();
+
+    const form = this;
+    const btn  = form.querySelector('button[type="submit"]');
+
+    // Если уже отправляется — выходим
+    if (btn.disabled) return;
+
+    // Блокируем кнопку
+    btn.disabled = true;
+    btn.textContent = 'Отправка…';
+
+    const name    = form.name.value;
+    const contact = form.contact.value;
+    const message = form.message.value;
+
+    const text = `🔥 Новый отклик из Noosphere City:%0A%0A👤 Имя: ${name}%0A✉️ Контакт: ${contact}%0A💬 Сообщение: ${message}`;
+    const token  = '8197581773:AAFTpr4DiNbv4fjAnwfTrGagVJYjzIU_tVk';
+    const chatId = '-1002608013735';
+
+    try {
+      await fetch(`https://api.telegram.org/bot${token}/sendMessage?chat_id=${chatId}&text=${text}`);
+      document.getElementById('successMessage').style.display = 'block';
+      form.reset();
+      btn.textContent = 'Отправлено ✅';
+      // Можно оставить кнопку заблокированной либо
+      // разблокировать через 30 секунд:
+      setTimeout(() => {
+        btn.disabled = false;
+        btn.textContent = 'Отправить';
+      }, 30_000);
+    } catch (err) {
+      alert('❌ Ошибка при отправке. Попробуй позже.');
+      // Разблокируем кнопку, чтобы пользователь мог повторить
+      btn.disabled = false;
+      btn.textContent = 'Отправить';
+    }
+  });
   </script>
 </body>
 </html>
