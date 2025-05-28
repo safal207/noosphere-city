@@ -1,213 +1,62 @@
 <!DOCTYPE html>
-<html lang="ru" data-theme="dark" style="transition: background 0.6s ease, color 0.6s ease;">
+<html lang="ru">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Noosphere City | Gazipasha</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Noosphere City</title>
   <style>
-    body {
-      font-family: 'Orbitron', sans-serif;
-      margin: 0;
-      padding: 1rem;
-      background: #0f0f0f;
-      color: #fff;
-    }
-    header {
-      text-align: center;
-      margin-bottom: 1rem;
-    }
-    .sub {
-      font-size: 1.2rem;
-      margin-top: 0.5rem;
-    }
-    .sticky-cta {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      padding: 0.75rem 1.25rem;
-      background: #00ffee;
-      color: #000;
-      font-weight: bold;
-      border-radius: 8px;
-      box-shadow: 0 0 12px #00ffee;
-      text-decoration: none;
-      opacity: 0;
-      transform: translateY(10px);
-      transition: all 0.5s ease;
-      z-index: 9999;
-      font-size: 0.9rem;
-      max-width: 250px;
-      text-align: center;
-    }
-    .sticky-cta.show {
-      opacity: 1;
-      transform: translateY(0);
-    }
-    .countdown-banner {
-      margin-top: 2rem;
-      text-align: center;
-      font-size: 1.2rem;
-      background: #111;
-      padding: 1rem;
-      border-radius: 8px;
-      box-shadow: 0 0 10px #0ff;
-    }
-    .countdown-banner span {
-      font-weight: bold;
-    }
-    #heart {
-      display: inline-block;
-      animation: beat 1s infinite;
-    }
-    @keyframes beat {
-      0%, 100% { transform: scale(1); color: #f00; }
-      50% { transform: scale(1.3); color: #ff69b4; }
-    }
-    .form-section {
-      margin-top: 3rem;
-      background: #1c1c1c;
-      padding: 2rem;
-      border-radius: 8px;
-      max-width: 500px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-    form label {
-      display: block;
-      margin-bottom: 0.25rem;
-      font-weight: bold;
-    }
-    form input, form textarea {
-      width: 100%;
-      padding: 0.5rem;
-      margin-bottom: 1rem;
-      border-radius: 4px;
-      border: none;
-    }
-    form button {
-      background: #00ffee;
-      color: #000;
-      padding: 0.75rem 1.5rem;
-      font-weight: bold;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      font-size: 1rem;
-      box-shadow: 0 0 8px #0ff;
-    }
-    form button:hover {
-      background: #00ccdd;
-    }
+    /* ваш CSS… */
+    body { background:#0f0f0f; color:#fff; font-family:sans-serif; padding:2rem; }
+    .form { max-width:400px; margin:2rem auto; background:#222; padding:1.5rem; border-radius:8px; }
+    .form input, .form textarea, .form button { width:100%; margin-bottom:1rem; padding:0.75rem; border:none; border-radius:4px; }
+    .form button { background:#0ff; color:#000; cursor:pointer; }
+    .success { color:#0f8; font-weight:bold; text-align:center; display:none; }
   </style>
 </head>
 <body>
-  <header>
-    <h1>🏙️ Добро пожаловать в <span style="color: #00ffee;">Noosphere City</span></h1>
-    <div class="sub">Создай свою жизнь в тишине, среди природы и единомышленников — пока мир шумит</div>
-  </header>
 
-  <section>
-    <div class="countdown-banner">
-      <div>🔥 <span>Осталось <span id="spots-left">13</span> мест в первой волне резидентов!</span></div>
-      <div>Успей до закрытия набора через: <span id="countdown"></span><span id="heart">❤️</span></div>
-    </div>
-  </section>
+  <h1>Noosphere City</h1>
+  <p>Создай свою жизнь в тишине…</p>
 
-  <section id="form-start" class="form-section">
+  <div class="form">
+    <h2>Отправь сигнал ❤️</h2>
     <form id="signalForm">
-      <label for="name">Имя или псевдоним:</label>
-      <input type="text" id="name" name="name" required />
-
-      <label for="contact">Контакт (Telegram, e-mail):</label>
-      <input type="text" id="contact" name="contact" required />
-
-      <label for="message">Почему тебя это откликает?</label>
-      <textarea id="message" name="message" rows="4"></textarea>
-
+      <input type="text"    id="name"    name="name"    placeholder="Имя или псевдоним"     required>
+      <input type="text"    id="contact" name="contact" placeholder="Контакт (Telegram, e-mail)" required>
+      <textarea id="message" name="message" rows="4" placeholder="Почему тебя это откликает?"></textarea>
       <button type="submit">Отправить сигнал</button>
     </form>
-  </section>
-
-  <footer style="margin-top: 2rem; text-align: center; font-size: 0.9rem;">
-    <span style="color: #ccc;">Noosphere City — 2025 © Проект на стыке духа и технологии</span>
-  </footer>
-
-  <a href="#form-start" class="sticky-cta" id="stickyCta">⬇ Перейти к форме</a>
+    <div class="success" id="successMessage">✅ Сигнал отправлен!</div>
+  </div>
 
   <script>
-    // Таймер обратного отсчёта
-    const countdown = document.getElementById("countdown");
-    const targetDate = new Date(Date.now() + 86400000); // +24 часа
-    function updateCountdown() {
-      const now = new Date();
-      const diff = targetDate - now;
-      const hours = String(Math.floor(diff / 1000 / 60 / 60)).padStart(2, '0');
-      const minutes = String(Math.floor(diff / 1000 / 60) % 60).padStart(2, '0');
-      const seconds = String(Math.floor(diff / 1000) % 60).padStart(2, '0');
-      countdown.textContent = `${hours}:${minutes}:${seconds}`;
-    }
-    setInterval(updateCountdown, 1000);
-    updateCountdown();
+    document.getElementById('signalForm').addEventListener('submit', async e => {
+      e.preventDefault();
+      const form = e.target;
+      const btn  = form.querySelector('button[type="submit"]');
+      btn.disabled = true;
+      btn.textContent = 'Отправка…';
 
-    // Плавающая кнопка
-    document.addEventListener("DOMContentLoaded", () => {
-      const cta = document.getElementById("stickyCta");
-      const formSection = document.getElementById("form-start");
-      const observer = new IntersectionObserver(([entry]) => {
-        if (!entry.isIntersecting) {
-          cta.classList.add("show");
-        } else {
-          cta.classList.remove("show");
-        }
-      }, {
-        threshold: 0.1
-      });
-      if (formSection) observer.observe(formSection);
-    });
-
-    // Обработка формы с Telegram
-   document.getElementById('signalForm').addEventListener('submit', async function (e) {
-    e.preventDefault();
-
-    const form = this;
-    const btn  = form.querySelector('button[type="submit"]');
-
-    // Если уже отправляется — выходим
-    if (btn.disabled) return;
-
-    // Блокируем кнопку
-    btn.disabled = true;
-    btn.textContent = 'Отправка…';
-
-    const name    = form.name.value;
-    const contact = form.contact.value;
-    const message = form.message.value;
-
-    const text = `🔥 Новый отклик из Noosphere City:%0A%0A👤 Имя: ${name}%0A✉️ Контакт: ${contact}%0A💬 Сообщение: ${message}`;
-    const token  = '8197581773:AAFTpr4DiNbv4fjAnwfTrGagVJYjzIU_tVk';
-    const chatId = '-1002608013735';
-
-    try {
-      await fetch(`https://api.telegram.org/bot${token}/sendMessage?chat_id=${chatId}&text=${text}`);
-      document.getElementById('successMessage').style.display = 'block';
-      form.reset();
-      btn.textContent = 'Отправлено ✅';
-      // Можно оставить кнопку заблокированной либо
-      // разблокировать через 30 секунд:
-      setTimeout(() => {
+      try {
+        await fetch('/api/submit', {
+          method:  'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body:    JSON.stringify({
+            name:    form.name.value,
+            contact: form.contact.value,
+            message: form.message.value
+          })
+        });
+        document.getElementById('successMessage').style.display = 'block';
+        form.reset();
+        btn.textContent = 'Отправлено ✅';
+      } catch (err) {
+        alert('Ошибка отправки. Попробуй позже.');
         btn.disabled = false;
-        btn.textContent = 'Отправить';
-      }, 30_000);
-    } catch (err) {
-      alert('❌ Ошибка при отправке. Попробуй позже.');
-      // Разблокируем кнопку, чтобы пользователь мог повторить
-      btn.disabled = false;
-      btn.textContent = 'Отправить';
-    }
-  });
+        btn.textContent = 'Отправить сигнал';
+      }
+    });
   </script>
+
 </body>
 </html>
