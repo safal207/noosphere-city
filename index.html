@@ -94,6 +94,8 @@
       font-size: 1.1rem;
       box-shadow: 0 0 8px #00ffee22;
     }
+    /* Honeypot */
+    .hidden-hp { display: none !important; }
     @media (max-width: 520px) {
       .container {
         margin: 0.7rem;
@@ -113,6 +115,7 @@
     </div>
 
     <form id="signalForm" autocomplete="off">
+      <input type="text" name="website" class="hidden-hp" tabindex="-1" autocomplete="off">
       <label for="name">Имя или псевдоним:</label>
       <input type="text" id="name" name="name" required autocomplete="off">
 
@@ -135,7 +138,6 @@
     const countdown = document.getElementById("countdown");
     const END_DATE_KEY = 'noosphere_countdown_end';
 
-    // Сохраняем дату окончания в localStorage, чтобы не сбивалось после F5
     let targetDate = localStorage.getItem(END_DATE_KEY);
     if (!targetDate) {
       targetDate = Date.now() + 24 * 60 * 60 * 1000;
@@ -155,7 +157,7 @@
     setInterval(updateCountdown, 1000);
     updateCountdown();
 
-    // Обработка формы
+    // Обработка формы с honeypot
     document.getElementById("signalForm").addEventListener("submit", async function(e) {
       e.preventDefault();
       const btn = document.getElementById('submitBtn');
@@ -165,7 +167,8 @@
       const payload = {
         name: document.getElementById("name").value.trim(),
         contact: document.getElementById("contact").value.trim(),
-        message: document.getElementById("message").value.trim()
+        message: document.getElementById("message").value.trim(),
+        website: this.website.value // honeypot поле
       };
 
       try {
