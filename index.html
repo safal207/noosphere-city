@@ -1,213 +1,200 @@
 <!DOCTYPE html>
-<html lang="ru" data-theme="dark" style="transition: background 0.6s ease, color 0.6s ease;">
+<html lang="ru">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Noosphere City | Gazipasha</title>
-  <!-- шрифт Orbitron -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
-  <script src="./env.js"></script>
   <style>
-    /* базовые стили */
     body {
-      font-family: 'Orbitron', sans-serif;
-      margin: 0;
-      padding: 1rem;
+      font-family: 'Orbitron', Arial, sans-serif;
       background: #0f0f0f;
       color: #fff;
+      margin: 0;
+      padding: 1rem;
+      min-height: 100vh;
     }
-    header {
+    .container {
+      max-width: 410px;
+      margin: 2rem auto;
+      background: #181818;
+      border-radius: 12px;
+      box-shadow: 0 0 32px #00ffee33;
+      padding: 2rem 1.5rem 1.5rem 1.5rem;
       text-align: center;
-      margin-bottom: 1rem;
+    }
+    h1 {
+      margin-bottom: 0.6rem;
+      font-size: 2.3rem;
     }
     .sub {
-      font-size: 1.2rem;
-      margin-top: 0.5rem;
+      font-size: 1.12rem;
+      margin-bottom: 1.7rem;
+      color: #c6fff7;
     }
-
-    /* баннер счётчика */
-    .countdown-banner {
-      margin-top: 2rem;
-      text-align: center;
-      font-size: 1.2rem;
-      background: #111;
-      padding: 1rem;
-      border-radius: 8px;
-      box-shadow: 0 0 10px #0ff;
+    form {
+      margin-top: 1rem;
+      text-align: left;
     }
-    .countdown-banner span { font-weight: bold; }
-
-    /* пульсирующее сердце */
-    #heart {
-      display: inline-block;
-      animation: beat 1s infinite;
-    }
-    @keyframes beat {
-      0%,100% { transform: scale(1); color: #f00; }
-      50%    { transform: scale(1.3); color: #ff69b4; }
-    }
-
-    /* форма */
-    .form-section {
-      margin-top: 3rem;
-      background: #1c1c1c;
-      padding: 2rem;
-      border-radius: 8px;
-      max-width: 500px;
-      margin: 0 auto;
-    }
-    .form-section label {
-      display: block;
-      margin-bottom: 0.25rem;
-      font-weight: bold;
-    }
-    .form-section input,
-    .form-section textarea {
-      width: 100%;
-      padding: 0.5rem;
-      margin-bottom: 1rem;
-      border-radius: 4px;
-      border: none;
-      background: #333;
-      color: #fff;
-    }
-    .form-section button {
-      background: #00ffee;
-      color: #000;
-      padding: 0.75rem 1.5rem;
-      font-weight: bold;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
+    form label {
       font-size: 1rem;
-      box-shadow: 0 0 8px #0ff;
+      font-weight: 600;
+      margin-bottom: 0.4rem;
+      display: block;
+      color: #00ffee;
+    }
+    form input, form textarea {
       width: 100%;
+      padding: 0.7rem;
+      margin-bottom: 1rem;
+      border-radius: 7px;
+      border: none;
+      background: #222;
+      color: #fff;
+      font-size: 1rem;
+      box-sizing: border-box;
+      outline: none;
+      transition: box-shadow 0.2s;
     }
-    .form-section button:hover {
-      background: #00ccdd;
+    form input:focus, form textarea:focus {
+      box-shadow: 0 0 6px #00ffee88;
     }
-
-    /* плавная кнопка «к форме» */
-    .sticky-cta {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      padding: 0.75rem 1.25rem;
+    form button {
+      width: 100%;
+      padding: 1rem;
       background: #00ffee;
-      color: #000;
+      color: #181818;
       font-weight: bold;
-      border-radius: 8px;
-      box-shadow: 0 0 12px #00ffee;
-      text-decoration: none;
-      opacity: 0;
-      transform: translateY(10px);
-      transition: all 0.5s ease;
-      z-index: 9999;
-      font-size: 0.9rem;
-      max-width: 250px;
-      text-align: center;
+      font-size: 1.1rem;
+      border: none;
+      border-radius: 7px;
+      cursor: pointer;
+      box-shadow: 0 0 15px #00ffee99;
+      transition: background 0.2s, color 0.2s;
     }
-    .sticky-cta.show {
-      opacity: 1;
-      transform: translateY(0);
+    form button:disabled {
+      background: #5cffeeb7;
+      color: #888;
+      cursor: not-allowed;
+    }
+    .success-message {
+      color: #00ffcc;
+      text-align: center;
+      font-weight: 600;
+      margin-top: 1.1rem;
+      display: none;
+    }
+    .timer {
+      margin: 1.5rem 0 1.7rem 0;
+      background: #181a1a;
+      border-radius: 7px;
+      padding: 0.8rem 0.5rem;
+      font-size: 1.1rem;
+      box-shadow: 0 0 8px #00ffee22;
+    }
+    @media (max-width: 520px) {
+      .container {
+        margin: 0.7rem;
+        padding: 1rem 0.3rem;
+      }
     }
   </style>
 </head>
 <body>
+  <div class="container">
+    <h1>Noosphere City</h1>
+    <div class="sub">Создай свою жизнь в тишине, среди природы и единомышленников — пока мир шумит</div>
 
-  <header>
-    <h1>🏙️ Добро пожаловать в <span style="color: #00ffee;">Noosphere City</span></h1>
-    <div class="sub">
-      Создай свою жизнь в тишине, среди природы и единомышленников — пока мир шумит
+    <div class="timer">
+      🔥 Осталось <b id="spots-left">13</b> мест &nbsp;|&nbsp;
+      До конца набора: <span id="countdown">--:--:--</span> <span style="font-size:1.3em;vertical-align:-0.1em;color:#ff59a5;animation:beat 1s infinite;">❤️</span>
     </div>
-  </header>
 
-  <section class="countdown-banner">
-    <div>🔥 Осталось <span id="spots-left">13</span> мест в первой волне резидентов!</div>
-    <div>Успей до закрытия набора через: <span id="countdown"></span> <span id="heart">❤️</span></div>
-  </section>
-
-  <section id="form-start" class="form-section">
-    <form id="signalForm">
+    <form id="signalForm" autocomplete="off">
       <label for="name">Имя или псевдоним:</label>
-      <input type="text" id="name" name="name" required />
+      <input type="text" id="name" name="name" required autocomplete="off">
 
       <label for="contact">Контакт (Telegram, e-mail):</label>
-      <input type="text" id="contact" name="contact" required />
+      <input type="text" id="contact" name="contact" required autocomplete="off">
 
       <label for="message">Почему тебя это откликает?</label>
-      <textarea id="message" name="message" rows="4"></textarea>
+      <textarea id="message" name="message" rows="3" required></textarea>
 
-      <button type="submit">Отправить сигнал</button>
-      <div id="successMessage" style="display:none; text-align:center; margin-top:1rem; color:#0f0;">
-        ✅ Сигнал отправлен!
-      </div>
+      <button type="submit" id="submitBtn">Отправить сигнал</button>
     </form>
-  </section>
-
-  <footer style="margin-top:2rem; text-align:center; color:#ccc; font-size:0.9rem;">
-    Noosphere City — 2025 © Проект на стыке духа и технологии
-  </footer>
-
-  <a href="#form-start" class="sticky-cta" id="stickyCta">⬇ Перейти к форме</a>
+    <div class="success-message" id="successMessage">✅ Сигнал отправлен! Скоро мы с тобой свяжемся.</div>
+    <div style="font-size:0.91em; color:#7ef6e3; margin-top:1.7rem; text-align:center; opacity:0.65;">
+      Noosphere City — 2025 © Проект на стыке духа и технологии
+    </div>
+  </div>
 
   <script>
-    // Таймер обратного отсчёта на 24 часа
+    // Таймер обратного отсчёта
     const countdown = document.getElementById("countdown");
-    const targetDate = Date.now() + 24*60*60*1000;
+    const END_DATE_KEY = 'noosphere_countdown_end';
+
+    // Сохраняем дату окончания в localStorage, чтобы не сбивалось после F5
+    let targetDate = localStorage.getItem(END_DATE_KEY);
+    if (!targetDate) {
+      targetDate = Date.now() + 24 * 60 * 60 * 1000;
+      localStorage.setItem(END_DATE_KEY, targetDate);
+    }
+    targetDate = parseInt(targetDate);
+
     function updateCountdown() {
-      const diff = targetDate - Date.now();
-      const h = String(Math.floor(diff/3600000)).padStart(2,'0');
-      const m = String(Math.floor(diff%3600000/60000)).padStart(2,'0');
-      const s = String(Math.floor(diff%60000/1000)).padStart(2,'0');
-      countdown.textContent = `${h}:${m}:${s}`;
+      const now = Date.now();
+      let diff = targetDate - now;
+      if (diff < 0) diff = 0;
+      const hours = String(Math.floor(diff / 1000 / 60 / 60)).padStart(2, '0');
+      const minutes = String(Math.floor(diff / 1000 / 60) % 60).padStart(2, '0');
+      const seconds = String(Math.floor(diff / 1000) % 60).padStart(2, '0');
+      countdown.textContent = `${hours}:${minutes}:${seconds}`;
     }
     setInterval(updateCountdown, 1000);
     updateCountdown();
 
-    // Плавающая кнопка «Перейти к форме»
-    document.addEventListener("DOMContentLoaded", () => {
-      const cta = document.getElementById("stickyCta");
-      const formSection = document.getElementById("form-start");
-      new IntersectionObserver(([e]) => {
-        cta.classList.toggle("show", !e.isIntersecting);
-      }, { threshold: 0.1 }).observe(formSection);
-    });
-
-    // Обработка отправки в Telegram и блокировка кнопки
+    // Обработка формы
     document.getElementById("signalForm").addEventListener("submit", async function(e) {
       e.preventDefault();
-      const btn = this.querySelector("button");
-      if (btn.disabled) return;
+      const btn = document.getElementById('submitBtn');
       btn.disabled = true;
       btn.textContent = "Отправка…";
 
-      const name    = this.name.value;
-      const contact = this.contact.value;
-      const msg     = this.message.value;
-      const text    = `🔥 Новый сигнал из Noosphere City:%0A%0A👤 Имя: ${name}%0A✉️ Контакт: ${contact}%0A💬 ${msg}`;
-      
-      const token  = window.env.TG_TOKEN;
-      const chatId = window.env.CHAT_ID;
-      
+      const payload = {
+        name: document.getElementById("name").value.trim(),
+        contact: document.getElementById("contact").value.trim(),
+        message: document.getElementById("message").value.trim()
+      };
+
       try {
-        await fetch(`https://api.telegram.org/bot${token}/sendMessage?chat_id=${chatId}&text=${text}`);
-        document.getElementById("successMessage").style.display = "block";
-        this.reset();
-        btn.textContent = "Отправлено ✅";
-        setTimeout(() => {
-          btn.disabled = false;
-          btn.textContent = "Отправить сигнал";
-        }, 30_000);
-      } catch {
+        const resp = await fetch("https://noosphere-server.vercel.app/api/submit", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload)
+        });
+
+        if (resp.ok) {
+          document.getElementById("successMessage").style.display = "block";
+          this.reset();
+          btn.textContent = "Отправлено ✅";
+        } else {
+          throw new Error("Ошибка при отправке");
+        }
+      } catch (error) {
         alert("❌ Ошибка при отправке. Попробуй позже.");
         btn.disabled = false;
         btn.textContent = "Отправить сигнал";
+        return;
       }
+
+      setTimeout(() => {
+        btn.disabled = false;
+        btn.textContent = "Отправить сигнал";
+        document.getElementById("successMessage").style.display = "none";
+      }, 28000);
     });
   </script>
-
 </body>
 </html>
