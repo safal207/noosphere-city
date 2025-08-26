@@ -1,0 +1,17 @@
+{
+  "title": "Noosphere City | Gazipasha",
+  "h1": "Noosphere City",
+  "sub": "Create your life in silence, among nature and like-minded people — while the world makes noise",
+  "timer_text_1": "There are",
+  "timer_text_2": "spots left",
+  "timer_text_3": "Until the end of enrollment:",
+  "label_name": "Name or pseudonym:",
+  "label_contact": "Contact (Telegram, e-mail):",
+  "label_message": "Why does this resonate with you?",
+  "button_submit": "Send a signal",
+  "success_message": "✅ Signal sent! We will contact you soon.",
+  "footer_text": "Noosphere City — 2025 © A project at the intersection of spirit and technology",
+  "js_sending": "Sending…",
+  "js_sent": "Sent ✅",
+  "js_error": "❌ Error sending. Please try again later."
+}

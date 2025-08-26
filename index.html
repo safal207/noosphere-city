@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html>
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -106,98 +106,33 @@
 </head>
 <body>
   <div class="container">
-    <h1>Noosphere City</h1>
-    <div class="sub">Создай свою жизнь в тишине, среди природы и единомышленников — пока мир шумит</div>
+    <h1 data-i18n="h1"></h1>
+    <div class="sub" data-i18n="sub"></div>
 
     <div class="timer">
-      🔥 Осталось <b id="spots-left">13</b> мест &nbsp;|&nbsp;
-      До конца набора: <span id="countdown">--:--:--</span> <span style="font-size:1.3em;vertical-align:-0.1em;color:#ff59a5;animation:beat 1s infinite;">❤️</span>
+      🔥 <span data-i18n="timer_text_1"></span> <b id="spots-left">13</b> <span data-i18n="timer_text_2"></span> &nbsp;|&nbsp;
+      <span data-i18n="timer_text_3"></span> <span id="countdown">--:--:--</span> <span style="font-size:1.3em;vertical-align:-0.1em;color:#ff59a5;animation:beat 1s infinite;">❤️</span>
     </div>
 
     <form id="signalForm" autocomplete="off">
       <input type="text" name="website" class="hidden-hp" tabindex="-1" autocomplete="off">
-      <label for="name">Имя или псевдоним:</label>
+      <label for="name" data-i18n="label_name"></label>
       <input type="text" id="name" name="name" required autocomplete="off">
 
-      <label for="contact">Контакт (Telegram, e-mail):</label>
+      <label for="contact" data-i18n="label_contact"></label>
       <input type="text" id="contact" name="contact" required autocomplete="off">
 
-      <label for="message">Почему тебя это откликает?</label>
+      <label for="message" data-i18n="label_message"></label>
       <textarea id="message" name="message" rows="3" required></textarea>
 
-      <button type="submit" id="submitBtn">Отправить сигнал</button>
+      <button type="submit" id="submitBtn" data-i18n="button_submit"></button>
     </form>
-    <div class="success-message" id="successMessage">✅ Сигнал отправлен! Скоро мы с тобой свяжемся.</div>
-    <div style="font-size:0.91em; color:#7ef6e3; margin-top:1.7rem; text-align:center; opacity:0.65;">
-      Noosphere City — 2025 © Проект на стыке духа и технологии
+    <div class="success-message" id="successMessage" data-i18n="success_message"></div>
+    <div style="font-size:0.91em; color:#7ef6e3; margin-top:1.7rem; text-align:center; opacity:0.65;" data-i18n="footer_text">
     </div>
   </div>
 
-  <script>
-    // Таймер обратного отсчёта
-    const countdown = document.getElementById("countdown");
-    const END_DATE_KEY = 'noosphere_countdown_end';
-
-    let targetDate = localStorage.getItem(END_DATE_KEY);
-    if (!targetDate) {
-      targetDate = Date.now() + 24 * 60 * 60 * 1000;
-      localStorage.setItem(END_DATE_KEY, targetDate);
-    }
-    targetDate = parseInt(targetDate);
-
-    function updateCountdown() {
-      const now = Date.now();
-      let diff = targetDate - now;
-      if (diff < 0) diff = 0;
-      const hours = String(Math.floor(diff / 1000 / 60 / 60)).padStart(2, '0');
-      const minutes = String(Math.floor(diff / 1000 / 60) % 60).padStart(2, '0');
-      const seconds = String(Math.floor(diff / 1000) % 60).padStart(2, '0');
-      countdown.textContent = `${hours}:${minutes}:${seconds}`;
-    }
-    setInterval(updateCountdown, 1000);
-    updateCountdown();
-
-    // Обработка формы с honeypot
-    document.getElementById("signalForm").addEventListener("submit", async function(e) {
-      e.preventDefault();
-      const btn = document.getElementById('submitBtn');
-      btn.disabled = true;
-      btn.textContent = "Отправка…";
-
-      const payload = {
-        name: document.getElementById("name").value.trim(),
-        contact: document.getElementById("contact").value.trim(),
-        message: document.getElementById("message").value.trim(),
-        website: this.website.value // honeypot поле
-      };
-
-      try {
-        const resp = await fetch("https://noosphere-server.vercel.app/api/submit", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(payload)
-        });
-
-        if (resp.ok) {
-          document.getElementById("successMessage").style.display = "block";
-          this.reset();
-          btn.textContent = "Отправлено ✅";
-        } else {
-          throw new Error("Ошибка при отправке");
-        }
-      } catch (error) {
-        alert("❌ Ошибка при отправке. Попробуй позже.");
-        btn.disabled = false;
-        btn.textContent = "Отправить сигнал";
-        return;
-      }
-
-      setTimeout(() => {
-        btn.disabled = false;
-        btn.textContent = "Отправить сигнал";
-        document.getElementById("successMessage").style.display = "none";
-      }, 28000);
-    });
-  </script>
+  <script src="localization.js" defer></script>
+  <script src="main.js" defer></script>
 </body>
 </html>

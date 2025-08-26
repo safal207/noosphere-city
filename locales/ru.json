@@ -1,0 +1,17 @@
+{
+  "title": "Noosphere City | Gazipasha",
+  "h1": "Noosphere City",
+  "sub": "Создай свою жизнь в тишине, среди природы и единомышленников — пока мир шумит",
+  "timer_text_1": "Осталось",
+  "timer_text_2": "мест",
+  "timer_text_3": "До конца набора:",
+  "label_name": "Имя или псевдоним:",
+  "label_contact": "Контакт (Telegram, e-mail):",
+  "label_message": "Почему тебя это откликает?",
+  "button_submit": "Отправить сигнал",
+  "success_message": "✅ Сигнал отправлен! Скоро мы с тобой свяжемся.",
+  "footer_text": "Noosphere City — 2025 © Проект на стыке духа и технологии",
+  "js_sending": "Отправка…",
+  "js_sent": "Отправлено ✅",
+  "js_error": "❌ Ошибка при отправке. Попробуй позже."
+}
