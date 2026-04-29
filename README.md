@@ -60,7 +60,10 @@ It is a working pilot proposal that anyone — a municipality officer, a develop
 
 ## Legal and operational scope
 
-This repository is a draft proposal, not a legal entity or an approved program. No municipal approval, housing commitment, visa support, employment, or investment is claimed or offered. Any real pilot would require local legal review and written agreements with each partner. See [docs/legal_and_operational_scope.md](docs/legal_and_operational_scope.md) for the full scope statement.
+This repository is a draft proposal, not a legal entity or an approved program. No municipal approval, housing commitment, visa support, employment, or investment is claimed or offered. Any real pilot would require local legal review and written agreements with each partner.
+
+- Full scope statement: [docs/legal_and_operational_scope.md](docs/legal_and_operational_scope.md)
+- Legal pathways for a future pilot: [docs/legal_pathways_for_pilot.md](docs/legal_pathways_for_pilot.md)
 
 ## License
 

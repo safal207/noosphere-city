@@ -4,6 +4,8 @@
 
 This is a working schedule for the first Noosphere City Gazipaşa cohort. Dates are placeholders. The plan exists to make the proposal concrete enough to discuss with partners.
 
+> Before launch, the pilot must select an operator and legal pathway. See [legal_pathways_for_pilot.md](legal_pathways_for_pilot.md) for the preliminary options and the minimum legal checklist.
+
 ## Phase 0 — Pre-pilot (weeks -8 to 0)
 
 - Finalize the residency model and challenge tracks.

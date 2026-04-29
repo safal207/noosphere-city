@@ -61,7 +61,7 @@ The project may later explore one or more of the following, each with its own le
 - A technopark partnership (for example via Türkiye Tech Visa or a Turkish technopark).
 - An incubator or accelerator partnership.
 
-The choice between these options is open and will depend on partners, funding, and legal advice at the time.
+The choice between these options is open and will depend on partners, funding, and legal advice at the time. Before launch, the pilot must select an operator and legal pathway. See [legal_pathways_for_pilot.md](legal_pathways_for_pilot.md) for a preliminary comparison of options and a minimum checklist.
 
 ## How to read this repository
 
