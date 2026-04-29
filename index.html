@@ -1,203 +1,631 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Noosphere City | Gazipasha</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
+  <title>Noosphere City Gazipaşa — AI Founder Residency Pilot</title>
+  <meta name="description" content="A proposed AI founder residency and civic innovation lab for Gazipaşa, Türkiye. Draft proposal, open for partner discussion." />
   <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #0d1117;
+      --surface: #161b22;
+      --surface2: #1c2330;
+      --border: #30363d;
+      --accent: #3fb950;
+      --accent-dim: #238636;
+      --text: #e6edf3;
+      --text-muted: #8b949e;
+      --text-subtle: #6e7681;
+      --link: #58a6ff;
+      --warn: #d29922;
+      --radius: 8px;
+      --radius-lg: 12px;
+    }
+
     body {
-      font-family: 'Orbitron', Arial, sans-serif;
-      background: #0f0f0f;
-      color: #fff;
-      margin: 0;
-      padding: 1rem;
-      min-height: 100vh;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      font-size: 16px;
     }
-    .container {
-      max-width: 410px;
-      margin: 2rem auto;
-      background: #181818;
-      border-radius: 12px;
-      box-shadow: 0 0 32px #00ffee33;
-      padding: 2rem 1.5rem 1.5rem 1.5rem;
-      text-align: center;
+
+    a { color: var(--link); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* ── Layout ── */
+    .container { max-width: 900px; margin: 0 auto; padding: 0 1.5rem; }
+
+    /* ── Nav ── */
+    nav {
+      border-bottom: 1px solid var(--border);
+      padding: 0.9rem 0;
+      position: sticky;
+      top: 0;
+      background: var(--bg);
+      z-index: 10;
     }
-    h1 {
-      margin-bottom: 0.6rem;
-      font-size: 2.3rem;
+    nav .inner {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
     }
-    .sub {
-      font-size: 1.12rem;
-      margin-bottom: 1.7rem;
-      color: #c6fff7;
-    }
-    form {
-      margin-top: 1rem;
-      text-align: left;
-    }
-    form label {
-      font-size: 1rem;
+    .nav-brand { font-weight: 700; font-size: 1.05rem; color: var(--text); letter-spacing: 0.02em; }
+    .nav-links { display: flex; gap: 1.2rem; font-size: 0.9rem; }
+    .nav-links a { color: var(--text-muted); }
+    .nav-links a:hover { color: var(--text); text-decoration: none; }
+
+    /* ── Sections ── */
+    section { padding: 3.5rem 0; border-bottom: 1px solid var(--border); }
+    section:last-of-type { border-bottom: none; }
+
+    h1 { font-size: clamp(2rem, 5vw, 3rem); font-weight: 800; line-height: 1.15; }
+    h2 { font-size: 1.55rem; font-weight: 700; margin-bottom: 1rem; }
+    h3 { font-size: 1.1rem; font-weight: 600; margin-bottom: 0.5rem; }
+
+    p { color: var(--text-muted); margin-bottom: 1rem; }
+    p:last-child { margin-bottom: 0; }
+
+    /* ── Hero ── */
+    #hero { padding-top: 4rem; }
+    .badge {
+      display: inline-block;
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      color: var(--warn);
+      font-size: 0.78rem;
       font-weight: 600;
-      margin-bottom: 0.4rem;
-      display: block;
-      color: #00ffee;
+      padding: 0.25rem 0.75rem;
+      border-radius: 20px;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      margin-bottom: 1.2rem;
     }
-    form input, form textarea {
-      width: 100%;
-      padding: 0.7rem;
-      margin-bottom: 1rem;
-      border-radius: 7px;
-      border: none;
-      background: #222;
-      color: #fff;
-      font-size: 1rem;
-      box-sizing: border-box;
-      outline: none;
-      transition: box-shadow 0.2s;
+    .hero-subtitle {
+      font-size: clamp(1.05rem, 2.5vw, 1.25rem);
+      color: var(--text-muted);
+      max-width: 640px;
+      margin-top: 0.8rem;
+      margin-bottom: 2rem;
     }
-    form input:focus, form textarea:focus {
-      box-shadow: 0 0 6px #00ffee88;
-    }
-    form button {
-      width: 100%;
-      padding: 1rem;
-      background: #00ffee;
-      color: #181818;
-      font-weight: bold;
-      font-size: 1.1rem;
-      border: none;
-      border-radius: 7px;
+    .cta-group { display: flex; gap: 0.75rem; flex-wrap: wrap; margin-bottom: 2.5rem; }
+    .btn {
+      display: inline-block;
+      padding: 0.6rem 1.3rem;
+      border-radius: var(--radius);
+      font-size: 0.95rem;
+      font-weight: 600;
       cursor: pointer;
-      box-shadow: 0 0 15px #00ffee99;
-      transition: background 0.2s, color 0.2s;
+      transition: opacity 0.15s;
+      border: none;
     }
-    form button:disabled {
-      background: #5cffeeb7;
-      color: #888;
-      cursor: not-allowed;
+    .btn:hover { opacity: 0.85; text-decoration: none; }
+    .btn-primary { background: var(--accent-dim); color: #fff; }
+    .btn-secondary { background: var(--surface2); color: var(--text); border: 1px solid var(--border); }
+    .btn-outline { background: transparent; color: var(--link); border: 1px solid var(--link); }
+
+    /* ── Model ── */
+    .exchange-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-top: 1.5rem;
     }
-    .success-message {
-      color: #00ffcc;
-      text-align: center;
-      font-weight: 600;
-      margin-top: 1.1rem;
-      display: none;
+    @media (max-width: 600px) { .exchange-grid { grid-template-columns: 1fr; } }
+    .exchange-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 1.4rem;
     }
-    .timer {
-      margin: 1.5rem 0 1.7rem 0;
-      background: #181a1a;
-      border-radius: 7px;
-      padding: 0.8rem 0.5rem;
-      font-size: 1.1rem;
-      box-shadow: 0 0 8px #00ffee22;
+    .exchange-card h3 { color: var(--accent); }
+
+    /* ── Pilot structure ── */
+    .pilot-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-top: 1.5rem;
     }
-    /* Honeypot */
-    .hidden-hp { display: none !important; }
-    @media (max-width: 520px) {
-      .container {
-        margin: 0.7rem;
-        padding: 1rem 0.3rem;
-      }
+    @media (max-width: 600px) { .pilot-grid { grid-template-columns: 1fr; } }
+    .pilot-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 1.4rem;
     }
+    .pilot-card .label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--text-subtle);
+      margin-bottom: 0.4rem;
+    }
+    .pilot-card h3 { font-size: 1.3rem; color: var(--text); margin-bottom: 0.6rem; }
+    .pilot-card ul { padding-left: 1.1rem; }
+    .pilot-card ul li { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 0.25rem; }
+
+    /* ── Tracks ── */
+    .tracks-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+      gap: 0.85rem;
+      margin-top: 1.5rem;
+    }
+    .track-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1rem 1.1rem;
+    }
+    .track-icon { font-size: 1.4rem; margin-bottom: 0.4rem; }
+    .track-card h3 { font-size: 0.95rem; color: var(--text); margin-bottom: 0.3rem; }
+    .track-card p { font-size: 0.85rem; color: var(--text-subtle); margin: 0; }
+
+    /* ── Partner value ── */
+    .partner-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+    .partner-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 1.3rem;
+    }
+    .partner-card .type {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--link);
+      margin-bottom: 0.5rem;
+    }
+    .partner-card h3 { font-size: 1rem; color: var(--text); margin-bottom: 0.5rem; }
+    .partner-card ul { padding-left: 1rem; }
+    .partner-card ul li { color: var(--text-muted); font-size: 0.88rem; margin-bottom: 0.2rem; }
+
+    /* ── Metrics table ── */
+    .metrics-group { margin-top: 1.5rem; }
+    .metrics-label {
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--text-subtle);
+      margin-bottom: 0.5rem;
+    }
+    .metrics-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.6rem;
+      margin-bottom: 1.2rem;
+    }
+    @media (max-width: 500px) { .metrics-grid { grid-template-columns: 1fr; } }
+    .metric-item {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 0.7rem 1rem;
+      display: flex;
+      align-items: baseline;
+      gap: 0.6rem;
+    }
+    .metric-num { font-size: 1.3rem; font-weight: 700; color: var(--accent); }
+    .metric-desc { font-size: 0.85rem; color: var(--text-muted); }
+
+    /* ── Disclaimer ── */
+    #disclaimer {
+      background: var(--surface);
+      border: 1px solid var(--warn);
+      border-radius: var(--radius-lg);
+      padding: 1.4rem 1.6rem;
+      margin-top: 1.5rem;
+    }
+    #disclaimer h3 { color: var(--warn); margin-bottom: 0.5rem; }
+    #disclaimer p { font-size: 0.9rem; color: var(--text-muted); }
+
+    /* ── Contact ── */
+    .contact-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 1.6rem;
+      max-width: 520px;
+      margin-top: 1.5rem;
+    }
+    .contact-card h3 { color: var(--text); margin-bottom: 0.3rem; }
+    .contact-card .role { font-size: 0.85rem; color: var(--text-subtle); margin-bottom: 1rem; }
+    .contact-row { display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem; font-size: 0.95rem; }
+    .contact-row .label-sm { color: var(--text-subtle); font-size: 0.82rem; min-width: 56px; }
+    .contact-interest {
+      margin-top: 1.4rem;
+      padding-top: 1.2rem;
+      border-top: 1px solid var(--border);
+    }
+    .contact-interest p { font-size: 0.9rem; margin-bottom: 0.8rem; }
+    .role-pills { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+    .pill {
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 0.25rem 0.7rem;
+      font-size: 0.82rem;
+      color: var(--text-muted);
+    }
+
+    /* ── Footer ── */
+    footer {
+      padding: 2rem 0;
+      border-top: 1px solid var(--border);
+    }
+    footer .inner {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    footer p { color: var(--text-subtle); font-size: 0.85rem; margin: 0; }
+    footer .links { display: flex; gap: 1.2rem; }
+    footer .links a { color: var(--text-subtle); font-size: 0.85rem; }
+    footer .links a:hover { color: var(--text); text-decoration: none; }
   </style>
 </head>
 <body>
-  <div class="container">
-    <h1>Noosphere City</h1>
-    <div class="sub">Создай свою жизнь в тишине, среди природы и единомышленников — пока мир шумит</div>
 
-    <div class="timer">
-      🔥 Осталось <b id="spots-left">13</b> мест &nbsp;|&nbsp;
-      До конца набора: <span id="countdown">--:--:--</span> <span style="font-size:1.3em;vertical-align:-0.1em;color:#ff59a5;animation:beat 1s infinite;">❤️</span>
-    </div>
-
-    <form id="signalForm" autocomplete="off">
-      <input type="text" name="website" class="hidden-hp" tabindex="-1" autocomplete="off">
-      <label for="name">Имя или псевдоним:</label>
-      <input type="text" id="name" name="name" required autocomplete="off">
-
-      <label for="contact">Контакт (Telegram, e-mail):</label>
-      <input type="text" id="contact" name="contact" required autocomplete="off">
-
-      <label for="message">Почему тебя это откликает?</label>
-      <textarea id="message" name="message" rows="3" required></textarea>
-
-      <button type="submit" id="submitBtn">Отправить сигнал</button>
-    </form>
-    <div class="success-message" id="successMessage">✅ Сигнал отправлен! Скоро мы с тобой свяжемся.</div>
-    <div style="font-size:0.91em; color:#7ef6e3; margin-top:1.7rem; text-align:center; opacity:0.65;">
-      Noosphere City — 2025 © Проект на стыке духа и технологии
+<nav>
+  <div class="inner">
+    <span class="nav-brand">Noosphere City Gazipaşa</span>
+    <div class="nav-links">
+      <a href="#model">Model</a>
+      <a href="#pilot">Pilot</a>
+      <a href="#tracks">Tracks</a>
+      <a href="#partners">Partners</a>
+      <a href="#contact">Contact</a>
+      <a href="https://github.com/safal207/noosphere-city">GitHub</a>
     </div>
   </div>
+</nav>
 
-  <script>
-    // Таймер обратного отсчёта
-    const countdown = document.getElementById("countdown");
-    const END_DATE_KEY = 'noosphere_countdown_end';
+<!-- ══════════════════ HERO ══════════════════ -->
+<section id="hero">
+  <div class="container">
+    <div class="badge">Draft proposal &mdash; open for partner discussion</div>
+    <h1>Noosphere City<br>Gazipaşa</h1>
+    <p class="hero-subtitle">
+      A proposed AI founder residency and civic innovation lab for Gazipaşa, Türkiye.
+      Founders build real prototypes. Local partners provide housing, venues, and real challenges.
+      Everyone gets something fair in return.
+    </p>
+    <div class="cta-group">
+      <a class="btn btn-primary" href="#contact">I'm interested as a founder</a>
+      <a class="btn btn-secondary" href="#contact">I'm interested as a local partner</a>
+      <a class="btn btn-outline" href="#pilot">Read the pilot plan</a>
+    </div>
+  </div>
+</section>
 
-    let targetDate = localStorage.getItem(END_DATE_KEY);
-    if (!targetDate) {
-      targetDate = Date.now() + 24 * 60 * 60 * 1000;
-      localStorage.setItem(END_DATE_KEY, targetDate);
-    }
-    targetDate = parseInt(targetDate);
+<!-- ══════════════════ MODEL ══════════════════ -->
+<section id="model">
+  <div class="container">
+    <h2>Residency-for-impact model</h2>
+    <p>
+      Noosphere City is not "free apartments for startups." It is a fair value exchange
+      where every participant contributes something real and receives something real in return.
+    </p>
 
-    function updateCountdown() {
-      const now = Date.now();
-      let diff = targetDate - now;
-      if (diff < 0) diff = 0;
-      const hours = String(Math.floor(diff / 1000 / 60 / 60)).padStart(2, '0');
-      const minutes = String(Math.floor(diff / 1000 / 60) % 60).padStart(2, '0');
-      const seconds = String(Math.floor(diff / 1000) % 60).padStart(2, '0');
-      countdown.textContent = `${hours}:${minutes}:${seconds}`;
-    }
-    setInterval(updateCountdown, 1000);
-    updateCountdown();
+    <div class="exchange-grid">
+      <div class="exchange-card">
+        <h3>What local partners provide</h3>
+        <ul style="padding-left: 1.2rem; margin-top: 0.6rem;">
+          <li style="color: var(--text-muted); margin-bottom: 0.3rem;">Temporary housing or venue access</li>
+          <li style="color: var(--text-muted); margin-bottom: 0.3rem;">Real local challenges and data access</li>
+          <li style="color: var(--text-muted); margin-bottom: 0.3rem;">Local introductions and context</li>
+          <li style="color: var(--text-muted); margin-bottom: 0.3rem;">Visibility as an innovation-friendly host</li>
+        </ul>
+      </div>
+      <div class="exchange-card">
+        <h3>What founders provide</h3>
+        <ul style="padding-left: 1.2rem; margin-top: 0.6rem;">
+          <li style="color: var(--text-muted); margin-bottom: 0.3rem;">Working prototypes for local problems</li>
+          <li style="color: var(--text-muted); margin-bottom: 0.3rem;">Public workshops and documentation</li>
+          <li style="color: var(--text-muted); margin-bottom: 0.3rem;">Demo-day outputs and open code</li>
+          <li style="color: var(--text-muted); margin-bottom: 0.3rem;">International visibility for Gazipaşa</li>
+        </ul>
+      </div>
+    </div>
 
-    // Обработка формы с honeypot
-    document.getElementById("signalForm").addEventListener("submit", async function(e) {
-      e.preventDefault();
-      const btn = document.getElementById('submitBtn');
-      btn.disabled = true;
-      btn.textContent = "Отправка…";
+    <p style="margin-top: 1.5rem; font-size: 0.92rem; color: var(--text-subtle);">
+      The pilot should only proceed if each participant can clearly answer:
+      <em>What do I contribute? What do I receive? Why is this fair?</em>
+    </p>
+  </div>
+</section>
 
-      const payload = {
-        name: document.getElementById("name").value.trim(),
-        contact: document.getElementById("contact").value.trim(),
-        message: document.getElementById("message").value.trim(),
-        website: this.website.value // honeypot поле
-      };
+<!-- ══════════════════ PILOT STRUCTURE ══════════════════ -->
+<section id="pilot">
+  <div class="container">
+    <h2>Pilot structure</h2>
+    <p>Two formats are proposed, both requiring at least one confirmed anchor partner before launch.</p>
 
-      try {
-        const resp = await fetch("https://noosphere-server.vercel.app/api/submit", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(payload)
-        });
+    <div class="pilot-grid">
+      <div class="pilot-card">
+        <div class="label">Option A</div>
+        <h3>Lean pilot</h3>
+        <ul>
+          <li>3–5 founders / builders</li>
+          <li>30–45 days on the ground</li>
+          <li>2–3 challenge tracks</li>
+          <li>2 working prototypes at demo day</li>
+          <li>1 public report</li>
+        </ul>
+        <p style="margin-top: 1rem; font-size: 0.85rem; color: var(--text-subtle);">
+          Suitable if only one housing partner is confirmed.
+        </p>
+      </div>
+      <div class="pilot-card">
+        <div class="label">Option B</div>
+        <h3>Standard pilot</h3>
+        <ul>
+          <li>5–10 founders / builders</li>
+          <li>60–90 days on the ground</li>
+          <li>3–5 challenge tracks</li>
+          <li>3–5 working prototypes at demo day</li>
+          <li>1 public demo day event</li>
+          <li>1 public report + continuation path</li>
+        </ul>
+        <p style="margin-top: 1rem; font-size: 0.85rem; color: var(--text-subtle);">
+          Requires 2–3 partners and confirmed challenge owners.
+        </p>
+      </div>
+    </div>
 
-        if (resp.ok) {
-          document.getElementById("successMessage").style.display = "block";
-          this.reset();
-          btn.textContent = "Отправлено ✅";
-        } else {
-          throw new Error("Ошибка при отправке");
-        }
-      } catch (error) {
-        alert("❌ Ошибка при отправке. Попробуй позже.");
-        btn.disabled = false;
-        btn.textContent = "Отправить сигнал";
-        return;
-      }
+    <p style="margin-top: 1.5rem; font-size: 0.9rem; color: var(--text-subtle);">
+      Timeline is a placeholder. No cohort is open yet. Phase 0 (partner agreements, legal setup, applications)
+      must complete before any founders are recruited.
+      See <a href="https://github.com/safal207/noosphere-city/blob/main/docs/pilot_90_day_plan.md">pilot_90_day_plan.md</a>.
+    </p>
+  </div>
+</section>
 
-      setTimeout(() => {
-        btn.disabled = false;
-        btn.textContent = "Отправить сигнал";
-        document.getElementById("successMessage").style.display = "none";
-      }, 28000);
-    });
-  </script>
+<!-- ══════════════════ CHALLENGE TRACKS ══════════════════ -->
+<section id="tracks">
+  <div class="container">
+    <h2>Challenge tracks</h2>
+    <p>
+      Tracks are proposed based on Gazipaşa's real assets: agriculture, tourism, real estate, education,
+      and environment. Each track is tied to a local challenge owner — a farm, hotel, school, or business
+      with a real problem to solve.
+    </p>
+
+    <div class="tracks-grid">
+      <div class="track-card">
+        <div class="track-icon">🗺️</div>
+        <h3>AI tourism guide</h3>
+        <p>Contextual, honest recommendations for Gazipaşa's food, nature, history, and crafts.</p>
+      </div>
+      <div class="track-card">
+        <div class="track-icon">🌿</div>
+        <h3>Agriculture intelligence</h3>
+        <p>Greenhouse monitoring, harvest prediction, and input optimization for local farmers.</p>
+      </div>
+      <div class="track-card">
+        <div class="track-icon">🏡</div>
+        <h3>Real estate transparency</h3>
+        <p>Price history, zoning context, and honest market data for buyers and developers.</p>
+      </div>
+      <div class="track-card">
+        <div class="track-icon">🛍️</div>
+        <h3>Local business discovery</h3>
+        <p>Searchable, up-to-date directory of local producers, restaurants, artisans, and services.</p>
+      </div>
+      <div class="track-card">
+        <div class="track-icon">📣</div>
+        <h3>Smart city issue reporting</h3>
+        <p>Lightweight tool for residents to report infrastructure problems with follow-up tracking.</p>
+      </div>
+      <div class="track-card">
+        <div class="track-icon">🌊</div>
+        <h3>Environmental monitoring</h3>
+        <p>Coastal, air, or soil data collection for protected areas including Caretta Caretta habitat.</p>
+      </div>
+      <div class="track-card">
+        <div class="track-icon">🎓</div>
+        <h3>Education &amp; AI workshops</h3>
+        <p>Free public AI literacy workshops for children, teachers, and local businesses.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════ PARTNER VALUE ══════════════════ -->
+<section id="partners">
+  <div class="container">
+    <h2>Who can partner</h2>
+    <p>Each partner type contributes something specific and receives something specific.</p>
+
+    <div class="partner-grid">
+      <div class="partner-card">
+        <div class="type">Hotels / Apart-hotels</div>
+        <h3>Housing partner</h3>
+        <ul>
+          <li><strong style="color: var(--text);">Give:</strong> 3–10 rooms for 30–90 days</li>
+          <li><strong style="color: var(--text);">Receive:</strong> AI tourism prototype, international press, demo-day visibility, pilot-partner credit</li>
+        </ul>
+      </div>
+      <div class="partner-card">
+        <div class="type">Developers / Real Estate</div>
+        <h3>Venue partner</h3>
+        <ul>
+          <li><strong style="color: var(--text);">Give:</strong> Apartments or commercial space</li>
+          <li><strong style="color: var(--text);">Receive:</strong> Real estate transparency prototype, branded visibility, early adopter positioning</li>
+        </ul>
+      </div>
+      <div class="partner-card">
+        <div class="type">Municipality / Institutions</div>
+        <h3>Civic partner</h3>
+        <ul>
+          <li><strong style="color: var(--text);">Give:</strong> Challenge access, introductions, non-binding support letter</li>
+          <li><strong style="color: var(--text);">Receive:</strong> Smart city prototypes, public report, pilot proof of concept</li>
+        </ul>
+      </div>
+      <div class="partner-card">
+        <div class="type">Local Businesses / Farms</div>
+        <h3>Challenge owner</h3>
+        <ul>
+          <li><strong style="color: var(--text);">Give:</strong> Real problem + data access + feedback</li>
+          <li><strong style="color: var(--text);">Receive:</strong> Working prototype tailored to their problem, no cost</li>
+        </ul>
+      </div>
+      <div class="partner-card">
+        <div class="type">Founders / Builders</div>
+        <h3>Resident</h3>
+        <ul>
+          <li><strong style="color: var(--text);">Give:</strong> Prototype, workshop, documentation, demo</li>
+          <li><strong style="color: var(--text);">Receive:</strong> Housing support, local access, community, demo day, public report credit</li>
+        </ul>
+      </div>
+      <div class="partner-card">
+        <div class="type">Mentors / Supporters</div>
+        <h3>Knowledge partner</h3>
+        <ul>
+          <li><strong style="color: var(--text);">Give:</strong> Expertise, advisory time, network introductions</li>
+          <li><strong style="color: var(--text);">Receive:</strong> Early access to prototypes, public acknowledgment, access to pilot findings</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════ METRICS ══════════════════ -->
+<section id="metrics">
+  <div class="container">
+    <h2>Public success metrics</h2>
+    <p>The pilot is validated only when these minimum thresholds are met. If they are not met, no second cohort is launched until the gap is diagnosed and fixed.</p>
+
+    <div class="metrics-group">
+      <div class="metrics-label">Lean pilot — minimum validation threshold</div>
+      <div class="metrics-grid">
+        <div class="metric-item"><span class="metric-num">1</span><span class="metric-desc">anchor partner (housing or venue)</span></div>
+        <div class="metric-item"><span class="metric-num">3–5</span><span class="metric-desc">founders / builders selected</span></div>
+        <div class="metric-item"><span class="metric-num">2</span><span class="metric-desc">local challenge owners participating</span></div>
+        <div class="metric-item"><span class="metric-num">2</span><span class="metric-desc">working prototypes at demo day</span></div>
+        <div class="metric-item"><span class="metric-num">1</span><span class="metric-desc">public report published</span></div>
+      </div>
+
+      <div class="metrics-label">Standard pilot — minimum validation threshold</div>
+      <div class="metrics-grid">
+        <div class="metric-item"><span class="metric-num">2–3</span><span class="metric-desc">local partners confirmed</span></div>
+        <div class="metric-item"><span class="metric-num">5–10</span><span class="metric-desc">founders / builders</span></div>
+        <div class="metric-item"><span class="metric-num">3–5</span><span class="metric-desc">challenge tracks with real owners</span></div>
+        <div class="metric-item"><span class="metric-num">3–5</span><span class="metric-desc">working prototypes</span></div>
+        <div class="metric-item"><span class="metric-num">1</span><span class="metric-desc">public demo day event</span></div>
+        <div class="metric-item"><span class="metric-num">1</span><span class="metric-desc">paid or partner-supported continuation path</span></div>
+      </div>
+    </div>
+
+    <p style="font-size: 0.88rem; color: var(--text-subtle);">
+      Full metrics specification: <a href="https://github.com/safal207/noosphere-city/blob/main/metrics/README.md">metrics/README.md</a>
+    </p>
+  </div>
+</section>
+
+<!-- ══════════════════ DISCLAIMER ══════════════════ -->
+<section id="legal">
+  <div class="container">
+    <h2>Legal and scope note</h2>
+    <div id="disclaimer">
+      <h3>This is a draft proposal</h3>
+      <p>
+        Noosphere City Gazipaşa is a draft proposal. It is not a legal entity, does not sponsor visas,
+        does not promise housing, and has no confirmed municipal approval or partners yet.
+        Any real pilot requires local legal review and written partner agreements.
+      </p>
+      <p style="margin-top: 0.6rem;">
+        No employment is offered or implied. No investment is solicited. No tokens, credits,
+        or speculative instruments are part of this pilot.
+        Prototypes produced during the pilot are not production-ready systems.
+        Any collection of personal data requires review under Turkish KVKK and, where relevant, GDPR.
+      </p>
+      <p style="margin-top: 0.6rem;">
+        Full scope statement:
+        <a href="https://github.com/safal207/noosphere-city/blob/main/docs/legal_and_operational_scope.md">legal_and_operational_scope.md</a>
+        &nbsp;·&nbsp;
+        <a href="https://github.com/safal207/noosphere-city/blob/main/docs/ip_data_and_prototype_scope.md">ip_data_and_prototype_scope.md</a>
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════ CONTACT ══════════════════ -->
+<section id="contact">
+  <div class="container">
+    <h2>Get in touch</h2>
+    <p>
+      The project is in active partner discovery. If you are a hotel, developer, municipality contact,
+      local business, founder, or mentor — reach out to discuss the pilot.
+    </p>
+
+    <div class="contact-card">
+      <h3>Aleksei Safonov</h3>
+      <div class="role">Project lead, Noosphere City Gazipaşa</div>
+      <div class="contact-row">
+        <span class="label-sm">Email</span>
+        <a href="mailto:safal0645@gmail.com">safal0645@gmail.com</a>
+      </div>
+      <div class="contact-row">
+        <span class="label-sm">GitHub</span>
+        <a href="https://github.com/safal207" target="_blank" rel="noopener">github.com/safal207</a>
+      </div>
+      <div class="contact-row">
+        <span class="label-sm">Repo</span>
+        <a href="https://github.com/safal207/noosphere-city" target="_blank" rel="noopener">safal207/noosphere-city</a>
+      </div>
+
+      <div class="contact-interest">
+        <p>When you write, please mention your role so we can respond with the right materials:</p>
+        <div class="role-pills">
+          <span class="pill">Founder / builder</span>
+          <span class="pill">Hotel / apart-hotel</span>
+          <span class="pill">Developer / real estate</span>
+          <span class="pill">Local business</span>
+          <span class="pill">Municipality / institution</span>
+          <span class="pill">Mentor / supporter</span>
+        </div>
+        <p style="margin-top: 0.9rem; font-size: 0.85rem; color: var(--text-subtle);">
+          Or review the full interest form fields:
+          <a href="https://github.com/safal207/noosphere-city/blob/main/templates/interest_form_fields.md">templates/interest_form_fields.md</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="inner">
+    <p>Noosphere City Gazipaşa &mdash; Draft proposal &mdash; 2025–2026</p>
+    <div class="links">
+      <a href="https://github.com/safal207/noosphere-city">GitHub</a>
+      <a href="https://github.com/safal207/noosphere-city/blob/main/README.md">README</a>
+      <a href="https://github.com/safal207/noosphere-city/blob/main/docs/legal_and_operational_scope.md">Legal scope</a>
+      <a href="https://github.com/safal207/noosphere-city/blob/main/README.tr.md">Türkçe</a>
+    </div>
+  </div>
+</footer>
+
 </body>
 </html>
