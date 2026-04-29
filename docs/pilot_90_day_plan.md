@@ -6,6 +6,10 @@ This is a working schedule for the first Noosphere City Gazipaşa cohort. Dates 
 
 > Before launch, the pilot must select an operator and legal pathway. See [legal_pathways_for_pilot.md](legal_pathways_for_pilot.md) for the preliminary options and the minimum legal checklist.
 
+## Anchor partner precondition
+
+Before participant recruitment begins, the project must identify at least one anchor partner and at least one local challenge owner, and document a written, non-binding pilot outline. See [anchor_partner_strategy.md](anchor_partner_strategy.md) and [first_partner_outreach_plan.md](first_partner_outreach_plan.md).
+
 ## Phase 0 — Pre-pilot (weeks -8 to 0)
 
 - Finalize the residency model and challenge tracks.
