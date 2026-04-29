@@ -58,6 +58,14 @@ noosphere-city/
 
 It is a working pilot proposal that anyone — a municipality officer, a developer, a hotel owner, a farmer cooperative, a founder — can read in one sitting and decide whether to talk further.
 
+## Legal and operational scope
+
+This repository is a draft proposal, not a legal entity or an approved program. No municipal approval, housing commitment, visa support, employment, or investment is claimed or offered. Any real pilot would require local legal review and written agreements with each partner. See [docs/legal_and_operational_scope.md](docs/legal_and_operational_scope.md) for the full scope statement.
+
+## License
+
+Released under the [MIT License](LICENSE).
+
 ## Status
 
 Draft. Open to feedback, partners, and revisions.

@@ -54,6 +54,18 @@ A residency that brings outsiders into a small district has obligations. This do
 - Burnout of a single founder or organizer holding everything together.
 - Quiet drift away from the original civic purpose.
 
+## Participant and partner protection
+
+The residency only works if everyone involved is treated fairly. The following protections apply by default.
+
+- **No misleading promises to founders.** No guarantees of visas, employment, investment, free long-term housing, or specific outcomes. What is offered is described in writing; what is not offered is not implied.
+- **No pressure on local partners.** Municipalities, developers, hotels, agencies, schools, and farmers are free to decline, pause, or withdraw at any stage without penalty or public criticism.
+- **No extraction of free labor from participants.** Residents are not asked to deliver unpaid commercial work for partners outside the agreed civic or pilot scope. Work done for a partner beyond that scope is governed by a separate written agreement.
+- **No displacement or housing pressure on local residents.** Only vacant, seasonal, or otherwise underused stock is used for housing. The residency does not compete with long-term local renters or buyers.
+- **Respect for local language, culture, ecology, and legal requirements.** Communication is offered in Turkish where possible. Local norms, religious and cultural practices, protected natural areas, and Turkish law are followed by default, not as an afterthought.
+
+These protections are minimum standards. Specific cohorts may add more, but may not weaken them.
+
 ## How we will know we are off track
 
 - Local partners stop returning calls.

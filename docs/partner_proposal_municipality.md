@@ -46,6 +46,21 @@ We propose a 90-day pilot of an AI founder residency in Gazipaşa. A small group
 5. Demo day and public report.
 6. Joint review: continue, adjust, or close.
 
+## Municipal reputation risk management
+
+The municipality's reputation is a public asset. Protecting it is part of the residency's responsibility. The following rules apply to any joint communication.
+
+- The pilot is framed as **experimental, limited, and time-boxed**. It is not presented as a finished program.
+- The municipality is **not presented as endorsing outcomes** before those outcomes exist. Endorsement language is reserved for results that have actually shipped and been jointly reviewed.
+- Public communication uses the words **"pilot", "proposed", "exploratory", and "partner-supported"**. It avoids language that implies a permanent municipal program.
+- **Clear success and failure criteria are defined before launch** and shared with the municipality. The day-90 review is bound by these criteria.
+- A **final public report** describes outcomes honestly, including what did not work.
+- If the cohort produces no useful prototypes, the report says so plainly. The municipality is not asked to celebrate work that did not happen.
+- The municipality may **withdraw from public promotion at any time** if minimum safety, ethical, or quality standards are not met. This right is written into any MoU.
+- Any media or social content involving the municipality is shared for review before publication during the pilot period.
+
+These rules exist so that supporting an early, imperfect pilot cannot become a reputational liability for the municipality later.
+
 ## What success looks like for the municipality
 
 - Tangible improvements or prototypes residents can see and use.
