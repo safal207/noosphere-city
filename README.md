@@ -58,6 +58,16 @@ noosphere-city/
 
 It is a working pilot proposal that anyone — a municipality officer, a developer, a hotel owner, a farmer cooperative, a founder — can read in one sitting and decide whether to talk further.
 
+## Economic principle
+
+Economy, in its living sense, is a fair exchange of value between participants — one that each side considers honest. Money only measures part of that exchange.
+
+The pilot should only proceed if each participant can clearly answer: *What do I give? What do I receive? Why is this fair?*
+
+Housing support, local challenges, founder work, public visibility, prototypes, and partner access are not charity or extraction. They form a transparent exchange where all sides benefit. No participant should be treated as a resource without a return of value.
+
+- Full exchange map and structural risks: [docs/value_exchange_principle.md](docs/value_exchange_principle.md)
+
 ## Economic model and jurisdiction
 
 Noosphere City Gazipaşa is not only a civic vision. It must also be economically and jurisdictionally viable. The pilot documentation now includes rough budget scenarios, resident incentives, sustainability risks, revenue hypotheses, and jurisdiction-screening criteria.
