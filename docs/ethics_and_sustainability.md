@@ -66,6 +66,18 @@ The residency only works if everyone involved is treated fairly. The following p
 
 These protections are minimum standards. Specific cohorts may add more, but may not weaken them.
 
+## Economic sustainability and fairness
+
+- Do not use free founder labor without a clear value exchange.
+- Do not promise housing, visas, investment, jobs, or customers unless formal agreements exist.
+- Do not pressure local businesses into unpaid work.
+- Do not create housing pressure for local residents.
+- Do not use token or speculative mechanisms in the first pilot.
+- Make resident obligations clear before acceptance.
+- Publish honest outcomes after the pilot, including failures.
+
+See [economic_model.md](economic_model.md), [pilot_budget.md](pilot_budget.md), and [resident_value_proposition.md](resident_value_proposition.md).
+
 ## How we will know we are off track
 
 - Local partners stop returning calls.

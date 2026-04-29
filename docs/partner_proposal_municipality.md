@@ -61,6 +61,20 @@ The municipality's reputation is a public asset. Protecting it is part of the re
 
 These rules exist so that supporting an early, imperfect pilot cannot become a reputational liability for the municipality later.
 
+## Economic discussion with municipality
+
+The first municipality conversation should not ask for large funding.
+
+Recommended ask:
+
+- support the pilot as an exploratory civic innovation initiative,
+- help identify 3–5 real local challenges,
+- allow public discussion if quality criteria are met,
+- introduce relevant local stakeholders,
+- evaluate whether useful prototypes emerge.
+
+The proposal does not promise guaranteed jobs, tax revenue, or investment. It offers a measurable pilot with a final report. See [economic_model.md](economic_model.md) and [pilot_budget.md](pilot_budget.md).
+
 ## What success looks like for the municipality
 
 - Tangible improvements or prototypes residents can see and use.
