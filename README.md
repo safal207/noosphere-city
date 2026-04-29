@@ -58,6 +58,15 @@ noosphere-city/
 
 It is a working pilot proposal that anyone — a municipality officer, a developer, a hotel owner, a farmer cooperative, a founder — can read in one sitting and decide whether to talk further.
 
+## Economic model and jurisdiction
+
+Noosphere City Gazipaşa is not only a civic vision. It must also be economically and jurisdictionally viable. The pilot documentation now includes rough budget scenarios, resident incentives, sustainability risks, revenue hypotheses, and jurisdiction-screening criteria.
+
+- Economic model: [docs/economic_model.md](docs/economic_model.md)
+- Pilot budget scenarios: [docs/pilot_budget.md](docs/pilot_budget.md)
+- Resident value proposition: [docs/resident_value_proposition.md](docs/resident_value_proposition.md)
+- Jurisdiction risk assessment: [docs/jurisdiction_risk_assessment.md](docs/jurisdiction_risk_assessment.md)
+
 ## Legal and operational scope
 
 This repository is a draft proposal, not a legal entity or an approved program. No municipal approval, housing commitment, visa support, employment, or investment is claimed or offered. Any real pilot would require local legal review and written agreements with each partner.

@@ -73,6 +73,20 @@ This is a working schedule for the first Noosphere City Gazipaşa cohort. Dates 
 - **Local backlash.** Communicate early and clearly; keep workshops free and public.
 - **Visa or legal complications.** Keep the pilot short and built on tourist-compatible stays, with formal pathways via technopark partners only when applicable.
 
+## Economic validation
+
+The 90-day pilot should validate:
+
+- whether founders want to join under realistic terms,
+- whether housing partners see value,
+- whether local businesses sponsor or own real challenges,
+- whether prototypes become pilots,
+- whether the model can produce at least one paid continuation path,
+- whether the cost per useful prototype is acceptable,
+- whether the municipality and partners see enough value to continue.
+
+See [economic_model.md](economic_model.md) and [pilot_budget.md](pilot_budget.md).
+
 ## Day 90 decision
 
 At the end of the 90 days, the residency lead, the municipality (if engaged), and the housing partner answer one question together: should there be a second cohort, and if so, what changes?

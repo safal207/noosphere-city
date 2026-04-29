@@ -63,6 +63,12 @@ The project may later explore one or more of the following, each with its own le
 
 The choice between these options is open and will depend on partners, funding, and legal advice at the time. Before launch, the pilot must select an operator and legal pathway. See [legal_pathways_for_pilot.md](legal_pathways_for_pilot.md) for a preliminary comparison of options and a minimum checklist.
 
+## Token / credits / contribution points
+
+Any token, credits, or contribution-point system is outside the first pilot's financial model. It may be studied later only as a non-speculative utility, contribution accounting, or governance mechanism after local legal, tax, and regulatory review.
+
+The first pilot should rely on conventional contracts, budgeting, sponsorship, and transparent reporting. See [economic_model.md](economic_model.md) and [jurisdiction_risk_assessment.md](jurisdiction_risk_assessment.md).
+
 ## How to read this repository
 
 - Treat every concrete number (units, residents, days) as a placeholder.
