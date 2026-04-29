@@ -80,3 +80,7 @@ If a jurisdiction creates unresolved visa, banking, reputational, sanctions, hou
 - **First pilot:** Gazipaşa / Türkiye, if partners and a legal pathway are validated.
 - **Other jurisdictions:** evaluate only after applying the risk criteria above.
 - **High-risk jurisdictions:** use as stress tests, not launch targets.
+
+## Local legal review
+
+A real pilot should proceed only after local legal review and, where needed, a written opinion or formal guidance from a qualified local professional (lawyer, accountant, or licensed consultant) covering housing terms, hosting status, visa-compatible activity, taxation, and public communication.

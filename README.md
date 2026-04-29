@@ -67,6 +67,16 @@ Noosphere City Gazipaşa is not only a civic vision. It must also be economicall
 - Resident value proposition: [docs/resident_value_proposition.md](docs/resident_value_proposition.md)
 - Jurisdiction risk assessment: [docs/jurisdiction_risk_assessment.md](docs/jurisdiction_risk_assessment.md)
 
+## Partner discovery
+
+The project is now in active partner discovery. Before participant recruitment, the project must identify at least one anchor partner (apart-hotel, developer, real estate agency, local business, school, or municipality contact) and at least one local challenge owner.
+
+- Anchor partner strategy: [docs/anchor_partner_strategy.md](docs/anchor_partner_strategy.md)
+- Anchor partner scorecard: [docs/anchor_partner_scorecard.md](docs/anchor_partner_scorecard.md)
+- 30-day outreach plan: [docs/first_partner_outreach_plan.md](docs/first_partner_outreach_plan.md)
+- Public success metrics: [docs/public_success_metrics.md](docs/public_success_metrics.md)
+- One-page partner brief: [templates/one_page_partner_brief.md](templates/one_page_partner_brief.md)
+
 ## Legal and operational scope
 
 This repository is a draft proposal, not a legal entity or an approved program. No municipal approval, housing commitment, visa support, employment, or investment is claimed or offered. Any real pilot would require local legal review and written agreements with each partner.
