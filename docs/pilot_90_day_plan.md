@@ -94,3 +94,29 @@ See [economic_model.md](economic_model.md) and [pilot_budget.md](pilot_budget.md
 ## Day 90 decision
 
 At the end of the 90 days, the residency lead, the municipality (if engaged), and the housing partner answer one question together: should there be a second cohort, and if so, what changes?
+
+---
+
+## Failure scenario and retrospective
+
+The pilot should be considered not validated if any of the following are true:
+
+- No anchor partner was found before launch.
+- Fewer than 3 credible founders/builders committed by the start date.
+- No real local challenge owner participated in an active, ongoing way.
+- No prototype reached demo quality by demo day.
+- No partner expressed interest in continuation after the pilot ended.
+- The legal or operator pathway remained unresolved at the time of launch.
+- Public communication about the pilot created confusion, reputational risk, or unmet expectations among any participant.
+
+**If the pilot is not validated:**
+
+1. Pause any plans for a second cohort immediately.
+2. Publish an honest retrospective in this repository within 30 days of the pilot end.
+3. Identify specifically which assumption failed — housing, founder interest, challenge owners, prototypes, legal readiness, or something else.
+4. Do not recruit a new cohort, accept new partner commitments, or claim progress until the failed assumption has been addressed with concrete evidence.
+5. If the failure is structural (the model itself is wrong for Gazipaşa), say so publicly and do not continue.
+
+A published failure is not a disgrace. An unpublished failure that leads to a second wave of unmet expectations is.
+
+See also: [metrics/README.md](../metrics/README.md) for the full list of validation thresholds and failure conditions.

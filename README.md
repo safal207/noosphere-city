@@ -87,12 +87,32 @@ The project is now in active partner discovery. Before participant recruitment, 
 - Public success metrics: [docs/public_success_metrics.md](docs/public_success_metrics.md)
 - One-page partner brief: [templates/one_page_partner_brief.md](templates/one_page_partner_brief.md)
 
+## Live partner-facing assets
+
+The project now includes a minimal live partner-facing structure, Turkish partner materials, a fair value-exchange diagram, pilot validation metrics, and prototype/data responsibility notes.
+
+- **Landing page:** [index.html](index.html) — partner-facing pilot overview, readable in 2–3 minutes
+- **Interest form fields:** [templates/interest_form_fields.md](templates/interest_form_fields.md) — documented form fields for founders, hotels, developers, businesses, municipality, and mentors
+- **Ecosystem value exchange:** [docs/ecosystem_value_exchange.md](docs/ecosystem_value_exchange.md) — Mermaid diagram and exchange map for every participant type
+- **Pilot metrics:** [metrics/README.md](metrics/README.md) — leading indicators, pilot metrics, trust metrics, and minimum validation thresholds
+- **IP, data, and prototype scope:** [docs/ip_data_and_prototype_scope.md](docs/ip_data_and_prototype_scope.md) — IP ownership defaults, data handling rules, prototype liability
+
+## Turkish partner materials
+
+- Turkish README: [README.tr.md](README.tr.md)
+- Turkish partner brief: [templates/one_page_partner_brief.tr.md](templates/one_page_partner_brief.tr.md)
+- Email to hotel/apart-hotel (Turkish): [templates/email_to_hotel_partner.tr.md](templates/email_to_hotel_partner.tr.md)
+- Email to developer/real estate partner (Turkish): [templates/email_to_developer_partner.tr.md](templates/email_to_developer_partner.tr.md)
+- Email to municipality (Turkish): [templates/email_to_municipality.tr.md](templates/email_to_municipality.tr.md)
+- Email to local business (Turkish): [templates/email_to_local_business.tr.md](templates/email_to_local_business.tr.md)
+
 ## Legal and operational scope
 
 This repository is a draft proposal, not a legal entity or an approved program. No municipal approval, housing commitment, visa support, employment, or investment is claimed or offered. Any real pilot would require local legal review and written agreements with each partner.
 
 - Full scope statement: [docs/legal_and_operational_scope.md](docs/legal_and_operational_scope.md)
 - Legal pathways for a future pilot: [docs/legal_pathways_for_pilot.md](docs/legal_pathways_for_pilot.md)
+- IP, data, and prototype scope: [docs/ip_data_and_prototype_scope.md](docs/ip_data_and_prototype_scope.md)
 
 ## License
 
