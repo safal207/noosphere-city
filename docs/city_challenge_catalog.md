@@ -94,6 +94,110 @@ This catalog lists candidate tracks for the first Noosphere City Gazipaşa cohor
 
 **Pilot partner candidates.** Municipality, transport operators, marina.
 
+## Track 9 — Youth and Teenager Digital Labs
+
+**Problem.** Local teenagers have limited access to hands-on digital skills, AI literacy, and maker culture. Most programs in the region target younger children or university students, leaving a gap at ages 12–18.
+
+**Possible deliverables.**
+- A structured 4-week digital skills curriculum for teens (AI basics, no-code tools, data literacy).
+- A maker-day event where teens build their first prototype from a local problem.
+- An open learning kit that local teachers can reuse after the pilot.
+- A mentorship matching tool connecting teens with founders in residence.
+- A showcase event where teens present projects to local community.
+
+**Pilot partner candidates.** Middle schools, high schools, youth associations, parent groups, municipality education department.
+
+**Why it matters.** Founders teaching teens creates mutual value: teens gain skills, founders gain local embedding, and the community sees the residency as something that gives back — not just another foreign project passing through.
+
+---
+
+## Track 10 — Marina, Yacht Club, and Nautical Services
+
+**Problem.** Gazipaşa has a marina and a coastline attractive to sailors and nautical tourists, but lacks digital tools for berth booking, sailing conditions, yacht maintenance, and local service discovery.
+
+**Possible deliverables.**
+- A real-time sailing conditions dashboard (wind, wave height, weather, swell) for the local coast.
+- A berth availability and booking prototype for the marina.
+- A local nautical services directory (mechanics, provisioning, fuel, chandlery).
+- A yacht sharing or trip-planning assistant for day trips along the coast.
+- A multilingual arrival guide for foreign sailors: customs, anchoring rules, local contacts.
+
+**Pilot partner candidates.** Gazipaşa marina management, local sailing clubs, nautical service providers, municipality tourism office.
+
+**Why it matters.** The Mediterranean sailing circuit is large and Gazipaşa is underserved digitally. A working prototype here can differentiate the marina among regional alternatives and attract higher-spend nautical tourists.
+
+---
+
+## Track 11 — Airport Experience and City Connectivity
+
+**Problem.** Gazipaşa-Alanya Airport is a significant asset, but the connection between arriving passengers and the city — transport, accommodation, local discovery — is fragmented and poorly served digitally.
+
+**Possible deliverables.**
+- An arrival guide app for Gazipaşa-Alanya Airport: transport options, local contacts, key information in multiple languages.
+- A real-time transport and shuttle coordination prototype for airport transfers.
+- An airport-to-city information display or kiosk concept (tested as a web prototype).
+- A feedback and suggestion tool for airport passengers to flag friction points.
+- A seasonal flight and visitor flow visualization for local businesses to plan staffing and inventory.
+
+**Pilot partner candidates.** Airport management (DHMİ or local operator), taxi and transfer companies, hotels, municipality tourism office, local businesses near transport corridors.
+
+**Why it matters.** The first impression of Gazipaşa is formed at the airport. A smoother, friendlier arrival experience directly affects whether visitors recommend the city and return.
+
+---
+
+## Track 12 — Coastal Zone, Beaches, and Marine Experience
+
+**Problem.** Gazipaşa's beaches are underutilized relative to their quality. There is no centralized digital information about beach conditions, facilities, accessibility, crowding, or water quality — and no easy way for visitors to find lesser-known coves and spots.
+
+**Possible deliverables.**
+- A beach discovery and conditions app: water temperature, wave height, crowd level, facilities, accessibility, nearest parking.
+- A coastal route planner connecting beaches, ancient sites, fishing villages, and natural areas.
+- A beach amenity reporting tool: working showers, lifeguards, umbrellas, litter levels.
+- A seasonal beach business directory (snack kiosks, rentals, water sports) with real hours.
+- A water sports and activity matching tool for tourists (snorkeling, kayaking, diving sites).
+
+**Pilot partner candidates.** Municipality coastal management, beach operators, water sports providers, local tourism offices, environmental groups.
+
+**Why it matters.** Beach quality and discoverability are primary drivers of tourism choice. Better coastal information directly supports local hospitality businesses and can reduce overcrowding at popular spots by distributing visitors across the coastline.
+
+---
+
+## Track 13 — Ecological Restoration and Citizen Science
+
+**Problem.** Gazipaşa has protected natural assets — Caretta Caretta nesting beaches, coastal ecosystems, agricultural land at risk of soil degradation — but lacks tools for community-driven monitoring, data collection, and restoration coordination.
+
+**Possible deliverables.**
+- An expanded Caretta Caretta monitoring app: nesting season tracker, sighting reports, volunteer coordination, public education layer.
+- A citizen science platform for coastal and marine litter tracking with photo reporting and heatmaps.
+- A soil health monitoring prototype for local farms: pH, moisture, input tracking.
+- An invasive species or habitat threat reporting tool tied to local environmental authorities.
+- A biodiversity walk and nature trail guide connecting ecological hotspots in the district.
+- A community clean-up coordination tool: event posting, volunteer sign-up, results tracking.
+
+**Pilot partner candidates.** Environmental NGOs, Caretta Caretta protection groups, municipality environment department, schools, farmer cooperatives, diving clubs.
+
+**Why it matters.** Ecological credibility strengthens Gazipaşa's positioning as a sustainable destination — which is a real differentiator from more developed and overcrowded coastal towns. Founder work here can directly support legal protection efforts and citizen engagement.
+
+---
+
+## Track 14 — Digital Nomads with Children and Families
+
+**Problem.** Gazipaşa has the natural conditions to attract remote workers and digital nomad families — sea, quiet, nature, affordable cost of living — but lacks the infrastructure and information layer that family-focused nomads need: schooling options, pediatric healthcare, safe outdoor activities for kids, co-working with childcare, and honest community guides.
+
+**Possible deliverables.**
+- A family nomad guide for Gazipaşa: schools (international and local), childcare, pediatric clinics, family-friendly neighborhoods, playgrounds, and activities.
+- A community matching tool: families in residence who can connect, share childcare, or organize group activities.
+- A co-working with kids finder: spaces that tolerate children, flexible hours, family-friendly cafes.
+- A seasonal activity calendar for children: beaches, nature, cultural events, youth workshops.
+- A relocation checklist for nomad families: SIM cards, health insurance, banking, residence registration, school enrollment.
+- A testimonial and Q&A platform where previous nomad families share real experiences in the region.
+
+**Pilot partner candidates.** Local schools (international programs or bilingual classes), pediatric clinics, family-friendly hotels and apart-hotels, municipality, co-working spaces, parent communities, local expat or nomad groups.
+
+**Why it matters.** Nomad families stay longer than solo travelers, spend more locally, and embed more deeply into the community. A family-friendly reputation differentiates Gazipaşa from destinations that attract only young solo nomads or retirees, and creates conditions for a second cohort of residents who bring their own social fabric.
+
+---
+
 ## Selection rules for the first cohort
 
 - Pick no more than 5 tracks.
